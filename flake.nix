@@ -42,3 +42,6 @@
           {networking.hostName = "nixos";}
         ];
       };
+    };
+  };
+}
