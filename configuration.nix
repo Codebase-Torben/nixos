@@ -9,10 +9,8 @@
   # Imports
   imports = [
     ./alias/global.nix
-    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  #############
   # NixOS
   nix = {
     enable = true;
@@ -231,6 +229,7 @@
       wheelNeedsPassword = lib.mkForce true;
     };
   };
+
   # Netzwerk
   networking = {
     domain = "pinasse.lan";
