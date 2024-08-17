@@ -35,7 +35,7 @@
     enableB43Firmware = true;
   };
 
-  # Dineste
+  # Dienste
   services = {
     mbpfan.enable = true;
   };
