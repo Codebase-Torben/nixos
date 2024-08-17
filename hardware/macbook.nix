@@ -4,16 +4,13 @@
   modulesPath,
   ...
 }: {
-  #################
-  #-=# IMPORTS #=-#
-  #################
+  # Import
   imports = [
     (modulesPath + "/hardware/network/broadcom-43xx.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  ##############
-  #-=# BOOT #=-#
-  ##############
+  # Boot
   boot = {
     # kernelParams = ["brcmfmac.feature_disable=0x82000"];
     # kernelParams = ["hid_apple.iso_layout=0"];
@@ -28,23 +25,17 @@
     };
   };
 
-  ##################
-  #-=# HARDWARE #=-#
-  ##################
+  # Hardware
   hardware = {
     facetimehd.enable = lib.mkForce false;
   };
 
-  ####################
-  #-=# NETWORKING #=-#
-  ####################
+  # Netzwerk
   networking = {
     enableB43Firmware = true;
   };
 
-  ##################
-  #-=# SERVICES #=-#
-  ##################
+  # Dineste
   services = {
     mbpfan.enable = true;
   };
