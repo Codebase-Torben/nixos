@@ -21,7 +21,7 @@
   }: {
     nixosConfigurations = {
       # NixOS
-      nixos = nixpkgs.lib.nixosSystem {
+      nixbook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           home-manager.nixosModules.home-manager
