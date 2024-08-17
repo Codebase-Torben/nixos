@@ -27,7 +27,7 @@
           home-manager.nixosModules.home-manager
           ./configuration.nix
           ./hardware/macbook.nix
-          ./modules/chronyPublic.nix
+          ./modules/timeserver.nix
           ./desktop/gnome.nix
           ./user/torben/flake.nix
           {networking.hostName = "nixbook";}
