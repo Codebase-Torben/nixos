@@ -4,14 +4,7 @@
   lib,
   ...
 }: {
-  #################
-  #-=# IMPORTS #=-#
-  #################
-  # imports = [];
-
-  ##################
-  #-=# PROGRAMS #=-#
-  ##################
+  # Programme
   programs = {
     firejail = {
       enable = true;
@@ -24,20 +17,16 @@
     };
   };
 
-  #####################
-  #-=# ENVIRONMENT #=-#
-  #####################
+  # env
   environment = {
-    systemPackages = with pkgs; [alacritty kitty];
+    systemPackages = with pkgs; [alacritty kitty kittysay];
     variables = {
       BROWSER = "librewolf";
       TERMINAL = "alacritty";
     };
   };
 
-  ##################
-  #-=# SERVICES #=-#
-  ##################
+  # Dienste
   services = {
     autosuspend.enable = lib.mkForce false;
     blueman.enable = true;
@@ -46,7 +35,7 @@
       enable = true;
       autoRepeatDelay = 150;
       autoRepeatInterval = 15;
-      xkb.layout = "us,de";
+      xkb.layout = "de";
     };
     pipewire = {
       enable = true;
@@ -58,9 +47,7 @@
     };
   };
 
-  ##################
-  #-=# HARDWARE #=-#
-  ##################
+  # Hardware
   hardware = {
     # graphics.extraPackages = with pkgs; [intel-vaapi-driver intel-media-driver];
     pulseaudio.enable = false; # disable pulseaudio here (use pipewire)
@@ -70,8 +57,6 @@
     };
   };
 
-  ##################
-  #-=# SECURITY #=-#
-  ##################
+  # Sicherheit
   security.rtkit.enable = true; # realtime, needed for audio
 }
