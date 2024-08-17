@@ -27,11 +27,11 @@
           home-manager.nixosModules.home-manager
           ./configuration.nix
           ./hardware/macbook.nix
-					./modules/office.nix
+				./modules/office.nix
           ./modules/timeserver.nix
-					./desktheme/shared.nix
+				./desktheme/shared.nix
           ./desktheme/gnome.nix
-          ./user/torben/flake.nix
+          ./user/flake.nix
           {networking.hostName = "nixbook";}
         ];
       };
