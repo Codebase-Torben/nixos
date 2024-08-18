@@ -7,22 +7,17 @@
   ...
 }: {
 # users
-users = {
-  users = {
-    torben = {
-      initialHashedPassword = "$y$j9T$SSQCI4meuJbX7vzu5H.dR.$VUUZgJ4mVuYpTu3EwsiIRXAibv2ily5gQJNAHgZ9SG7"; # start
-      description = "Torben";
-      uid = 40100;
-      group = "users";
-      createHome = true;
-      isNormalUser = true;
-      shell = pkgs.zsh;
-      extraGroups = ["wheel" "networkmanager" "audio" "input" "video" "docker" "libvirtd" "qemu-libvirtd"];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAA-#locked#-"];
-    };
-  };
+users.users.torben = {
+  initialHashedPassword = "$y$j9T$SSQCI4meuJbX7vzu5H.dR.$VUUZgJ4mVuYpTu3EwsiIRXAibv2ily5gQJNAHgZ9SG7"; # start
+  description = "Torben";
+  uid = 40100;
+  group = "users";
+  createHome = true;
+  isNormalUser = true;
+  shell = pkgs.zsh;
+  extraGroups = ["wheel" "networkmanager" "audio" "input" "video" "docker" "libvirtd" "qemu-libvirtd"];
+  openssh.authorizedKeys.keys = ["ssh-ed25519 AAA-#locked#-"];
 };
-
 # home-manager
 home-manager.users.torben = {
   home = {
