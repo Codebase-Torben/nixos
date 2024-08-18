@@ -100,7 +100,7 @@
       lt = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename --tree";
       lo = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename --octal-permissions";
       li = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=inode --inode";
-      meow = "kittysay"
+      meow = "kittysay";
     };
   };
 }
