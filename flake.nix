@@ -30,7 +30,7 @@
           home-manager.nixosModules.home-manager
           ./configuration.nix
           ./hardware/macbook.nix
-          ./user/torben.nix
+          ./users/torben.nix
 	  ./modules/office.nix
           ./modules/timeserver.nix
 	  ./desktheme/shared.nix
