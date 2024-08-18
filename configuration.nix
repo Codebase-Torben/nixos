@@ -231,7 +231,7 @@
 
   # Netzwerk
   networking = {
-    domain = "pinasse.lan";
+    domain = "pinasse.home";
     useDHCP = lib.mkDefault true;
     enableIPv6 = lib.mkForce false;
     networkmanager.enable = true;
@@ -239,7 +239,7 @@
     firewall = {
       enable = true;
       allowPing = false;
-      allowedTCPPorts = [];
+      allowedTCPPorts = [80 443];
       allowedUDPPorts = [];
       checkReversePath = true;
     };
