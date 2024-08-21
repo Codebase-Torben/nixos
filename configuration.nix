@@ -52,7 +52,7 @@
       automatic = true;
       persistent = true;
       dates = "daily";
-      options = "--delete-older-than 12d";
+      options = "--delete-older-than 13d";
     };
   };
 
@@ -60,30 +60,30 @@
   nixpkgs = {
     hostPlatform = lib.mkDefault "x86_64-linux";
     config = {
-      allowBroken = lib.mkDefault true;
+      allowBroken = lib.mkDefault false; # normal was true
       allowUnfree = lib.mkDefault true;
     };
   };
 
   # Dateisysteme
   #fileSystems = {
-    #"/" = {
-      #device = "/dev/disk/by-diskseq/1-part2";
-      #fsType = "ext4";
-    #};
-    #"/boot" = {
-      #device = "/dev/disk/by-diskseq/1-part1";
-      #fsType = "vfat";
-      #options = ["fmask=0022" "dmask=0022"];
-    #};
-  #};
+    "/" = {
+      device = "/dev/disk/by-diskseq/1-part3";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-diskseq/1-part1";
+      fsType = "vfat";
+      options = ["fmask=0022" "dmask=0022"];
+    };
+  };
 
   # Boot
   boot = {
     blacklistedKernelModules = ["ax25" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "sysv"];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = ["page_alloc.shuffle=1" "ipv6.disable=1"];
-    kernelModules = ["acpi_call" "kvm-intel" "kvm-amd" "vfat" "exfat"];
+    kernelModules = ["acpi_call" "kvm-intel" "kvm-amd" "vfat" "exfat" "apfs"];
     readOnlyNixStore = lib.mkForce true;
     initrd = {
       systemd.enable = lib.mkForce false;
@@ -159,8 +159,7 @@
   console = {
     earlySetup = lib.mkForce true;
     keyMap = "de";
-    font = "${pkgs.powerline-fonts}/share/consolefonts/ter-powerline-v18b.psf.gz";
-    packages = with pkgs; [powerline-fonts];
+    #font = "";
   };
   swapDevices = [];
   zramSwap = {
@@ -323,12 +322,6 @@
     };
     systemPackages = with pkgs; [alejandra];
     shells = [pkgs.bashInteractive pkgs.zsh];
-    shellAliases = {
-      l = "ls -la";
-      n = "nano";
-      h = "htop --tree --highlight-changes";
-      slog = "journalctl --follow --priority=7 --lines=2500";
-    };
   };
 
   # Sprache
@@ -364,9 +357,9 @@
         #defaultAction = "deny";
       #};
     #};
-    #fstrim = {
-      #enable = true;
-      #interval = "daily";
-    #};
+    fstrim = {
+      enable = true;
+      #interval = "monthly";
+    };
   };
 }

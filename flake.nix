@@ -25,16 +25,17 @@
     nixosConfigurations = {
       # NixOS
       nixbook = nixpkgs.lib.nixosSystem {
+        #system = "aarch64-linux";
         system = "x86_64-linux";
         modules = [
           home-manager.nixosModules.home-manager
           ./configuration.nix
           ./hardware/macbook.nix
+          #./hardware/intel.nix
+          ./desktheme/gnome.nix
           ./users/torben.nix
 	  ./modules/office.nix
           ./modules/timeserver.nix
-	  ./desktheme/shared.nix
-          ./desktheme/gnome.nix
           {networking.hostName = "nixbook";}
         ];
       };
