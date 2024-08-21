@@ -4,16 +4,12 @@
   lib,
   ...
 }: {
-  #################
-  #-=# IMPORTS #=-#
-  #################
+  # Import
   imports = [
     ./shared.nix
   ];
 
-  ##################
-  #-=# PROGRAMS #=-#
-  ##################
+  # Programme
   programs = {
     hyprland = {
       enable = true;
@@ -29,9 +25,7 @@
     };
   };
 
-  #####################
-  #-=# ENVIRONMENT #=-#
-  #####################
+  # env
   environment = {
     systemPackages = with pkgs; [rofi-wayland];
     variables = {
@@ -39,9 +33,7 @@
     };
   };
 
-  ##################
-  #-=# SERVICES #=-#
-  ##################
+  # Dineste
   services = {
     dbus = {
       enable = true;
@@ -55,9 +47,7 @@
     };
   };
 
-  #############
-  #-=# XDG #=-#
-  #############
+  # Window Manager
   xdg = {
     portal = {
       enable = true;

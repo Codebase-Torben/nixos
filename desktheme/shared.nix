@@ -19,7 +19,7 @@
 
   # env
   environment = {
-    systemPackages = with pkgs; [alacritty kitty kittysay];
+    systemPackages = with pkgs; [alacritty kittysay];
     variables = {
       BROWSER = "librewolf";
       TERMINAL = "alacritty";
@@ -49,7 +49,7 @@
 
   # Hardware
   hardware = {
-    # graphics.extraPackages = with pkgs; [intel-vaapi-driver intel-media-driver];
+    graphics.extraPackages = with pkgs; [intel-vaapi-driver intel-media-driver];
     pulseaudio.enable = false; # disable pulseaudio here (use pipewire)
     bluetooth = {
       enable = true;

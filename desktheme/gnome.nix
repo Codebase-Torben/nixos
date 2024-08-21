@@ -20,7 +20,8 @@
   };
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [toggle-alacritty wireguard-vpn-extension wifi-qrcode];
-    gnome.excludePackages = (with pkgs; [
+    gnome.excludePackages =
+      (with pkgs; [
         gnome-tour
         #gnome-calendar
         #gnome-terminal
@@ -45,18 +46,20 @@
 
   # Dienste
   services = {
-    gvfs.enable = lib.mkForce false;
+    gvfs.enable = lib.mkForce true;
     gnome = {
       core-utilities.enable = lib.mkForce true;
       games.enable = lib.mkForce false;
       gnome-browser-connector.enable = lib.mkForce false;
-      gnome-initial-setup.enable = lib.mkForce false;
+      gnome-initial-setup.enable = lib.mkForce true;
       gnome-online-accounts.enable = lib.mkForce true;
       gnome-online-miners.enable = lib.mkForce false;
       gnome-remote-desktop.enable = lib.mkForce false;
       gnome-user-share.enable = lib.mkForce true;
       gnome-keyring.enable = lib.mkForce false;
     };
+    udisks2.enable = lib.mkForce true;
+    #devmon.enable = lib.mkForce true;
     xserver = {
       displayManager.gdm = {
         enable = true;
