@@ -8,7 +8,7 @@
   programs = {
     system-config-printer.enable = lib.mkForce true;
   };
-  
+
   # Office Software
   environment = {
     systemPackages = with pkgs; [
