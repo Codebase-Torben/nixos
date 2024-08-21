@@ -9,33 +9,65 @@
     ./shared.nix
   ];
 
-  # Gnome
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Gnome Programme
+  programs = {
+    geary.enable = lib.mkForce false;
+    seahorse.enable = lib.mkForce false;
+    dconf = {
+      enable = true;
+      profiles.gdm.databases = [{settings."org/gnome/settings-daemon/plugins/power" = {power-button-action = "suspend";};}];
+    };
+  };
+  environment = {
+    systemPackages = with pkgs.gnomeExtensions; [toggle-alacritty wireguard-vpn-extension wifi-qrcode];
+    gnome.excludePackages = (with pkgs; [
+        gnome-tour
+        #gnome-calendar
+        #gnome-terminal
+        totem
+        geary
+        cheese
+        gnome-photos
+        gedit
+        evince
+        epiphany
+      ])
+      ++ (with pkgs.gnome; [
+        gnome-music
+        gnome-contacts
+        gnome-characters
+        tali
+        iagno
+        hitori
+        atomix
+      ]);
+  };
 
-  # env
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    gnome-music
-    gedit # text editor
-    epiphany # web browser
-    geary # email reader
-    gnome-characters
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-    yelp # Help view
-    gnome-contacts
-    gnome-initial-setup
-    ]);
-  programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [
-    gnome.gnome-tweaks
-    ];
+  # Dienste
+  services = {
+    gvfs.enable = lib.mkForce false;
+    gnome = {
+      core-utilities.enable = lib.mkForce true;
+      games.enable = lib.mkForce false;
+      gnome-browser-connector.enable = lib.mkForce false;
+      gnome-initial-setup.enable = lib.mkForce false;
+      gnome-online-accounts.enable = lib.mkForce true;
+      gnome-online-miners.enable = lib.mkForce false;
+      gnome-remote-desktop.enable = lib.mkForce false;
+      gnome-user-share.enable = lib.mkForce true;
+      gnome-keyring.enable = lib.mkForce false;
+    };
+    xserver = {
+      displayManager.gdm = {
+        enable = true;
+        autoSuspend = false;
+        banner = ''NixOS gnome Desktop '';
+      };
+      desktopManager = {
+        gnome = {
+          enable = true;
+        };
+      };
+    };
   };
 }
