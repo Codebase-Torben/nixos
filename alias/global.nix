@@ -30,7 +30,7 @@
       "nix.cleanfull" = ''
         cd /etc/nixos &&\
         sudo -v &&\
-        sudo rm /boot/loader/entries/* ;\
+        sudo rm /boot/loader/entries/nixos* ;\
         sudo rm -rf /nix/var/nix/profiles/system* ;\
         sudo mkdir -p /nix/var/nix/profiles/system-profiles ;\
         nix.build &&\
@@ -93,7 +93,6 @@
     # Globale Aliase
       n = "nano";
       cro = "systemctl status chronyd ; chronyc tracking ; chronyc sources ; chronyc sourcestats ; sudo chronyc authdata ; sudo chronyc serverstats";
-      cat = "bat --paging=never";
       termshark = "sudo termshark";
       ll = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename";
       la = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=size";
@@ -101,6 +100,9 @@
       lo = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename --octal-permissions";
       li = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=inode --inode";
       meow = "kittysay";
+      l = "ls -la";
+      h = "htop --tree --highlight-changes";
+      slog = "journalctl --follow --priority=7 --lines=2500";
     };
   };
 }
