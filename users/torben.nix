@@ -15,7 +15,7 @@ users.users.torben = {
   createHome = true;
   isNormalUser = true;
   shell = pkgs.zsh;
-  extraGroups = ["wheel" "networkmanager" "storage" "audio" "input" "video" "docker" "libvirtd" "qemu-libvirtd"];
+  extraGroups = ["wheel" "networkmanager" "audio" "storage" "input" "video" "docker" "libvirtd" "qemu-libvirtd"];
   #openssh.authorizedKeys.keys = ["ssh-ed25519 AAA-#locked#-"];
 };
 # home-manager
@@ -33,7 +33,6 @@ home-manager.users.torben = {
       };
       file = {".config/starship.toml".source = ./resources/starship/colorconf.toml;};
       packages = with pkgs; [
-        audacity
         #asn
         #age #file encryption
         #bandwhich #Cli network utilization tool
@@ -44,7 +43,6 @@ home-manager.users.torben = {
         #git-agecrypt
         #httpie
         #hyperfine #Cli Benchmark
-        krita
         openssl
         tldr #man based code examples :D
         shellcheck
@@ -65,7 +63,6 @@ home-manager.users.torben = {
         ugm #Cli Usermanagement
         #viddy
         vulnix
-        vlc
         vscode
         xh #Tool for sending HTTP requests
         ];
@@ -161,7 +158,7 @@ home-manager.users.torben = {
         share = true;
         };
       };
-    #vim = {
+      #vim = {
         #enable = true;
         #defaultEditor = false;
         #plugins = with pkgs.vimPlugins; [vim-shellcheck vim-go vim-git];
@@ -186,7 +183,7 @@ home-manager.users.torben = {
           wireless-hid.extensionUuid
           wifi-qrcode.extensionUuid
           ];
-        favorite-apps = ["org.gnome.Nautilus.desktop" "Alacritty.desktop" "org.gnome.Terminal.desktop" "librewolf.desktop" "org.gnome.Calendar.desktop" "org.gnome.Textedit.desktop" "code.desktop"];
+        favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "code.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop" "org.remmina.Remmina.desktop" "org.gnome.Settings.desktop"];
         };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
