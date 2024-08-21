@@ -16,7 +16,7 @@ users.users.torben = {
   isNormalUser = true;
   shell = pkgs.zsh;
   extraGroups = ["wheel" "networkmanager" "audio" "input" "video" "docker" "libvirtd" "qemu-libvirtd"];
-  openssh.authorizedKeys.keys = ["ssh-ed25519 AAA-#locked#-"];
+  #openssh.authorizedKeys.keys = ["ssh-ed25519 AAA-#locked#-"];
 };
 # home-manager
 home-manager.users.torben = {
@@ -28,51 +28,43 @@ home-manager.users.torben = {
       sessionVariables = {
         EDITOR = "nano";
         VISUAL = "nano";
-        PAGER = "bat";
+        #PAGER = "bat";
         SHELLCHECK_OPTS = "-e SC2086";
       };
       file = {".config/starship.toml".source = ./resources/starship/colorconf.toml;};
       packages = with pkgs; [
-        asn
-        age
-        bandwhich
+        #asn
+        #age #file encryption
+        #bandwhich #Cli network utilization tool
         bmon
-        curlie
-        dust
         dnsutils
-        gobang
-        git-crypt
-        git-agecrypt
-        httpie
-        hyperfine
+        dig
+        #git-crypt
+        #git-agecrypt
+        #httpie
+        #hyperfine #Cli Benchmark
         openssl
-        tldr
+        tldr #man based code examples :D
         shellcheck
-        shfmt
         sysz
         tailspin
         kmon
+        kittysay
         moreutils
         fd
-        jq
-        oha
-        openssl
-        tig
+        #oha #Webserver tests
+        remmina
         tree
-        trippy
+        #trippy
         termshark
-        tz
-        paper-age
-        passage
-        portal
-        rage
-        rustscan
-        ugm
-        viddy
+        tz #Timezone tool
+        portal #Data transport
+        rustscan #rust based nmap
+        ugm #Cli Usermanagement
+        #viddy
         vulnix
         vscode
-        yq
-        xh
+        xh #Tool for sending HTTP requests
         ];
       };
     fonts.fontconfig.enable = true;
@@ -82,14 +74,11 @@ home-manager.users.torben = {
       fzf.enable = true;
       thefuck.enable = true;
       starship.enable = true;
-      go.enable = true;
       gh-dash.enable = true;
       git.enable = true;
       gitui.enable = true;
       lazygit.enable = true;
       home-manager.enable = true;
-      ripgrep.enable = true;
-      skim.enable = true;
       librewolf.enable = true;
       kitty = {
         enable = true;
@@ -143,15 +132,15 @@ home-manager.users.torben = {
       };
     atuin = {
       enable = true;
-      flags = ["--disable-up-arrow"];
+      #flags = ["--disable-up-arrow"];
       };
-    bat = {
-      enable = true;
-      extraPackages = with pkgs.bat-extras; [batdiff batman batgrep batwatch prettybat];
-      };
+    #bat = { #broken since 20082024
+      #enable = true;
+      #extraPackages = with pkgs.bat-extras; [batdiff batman batgrep batwatch prettybat];
+      #};
     eza = {
       enable = true;
-      git = true;
+      #git = true;
       icons = true;
       extraOptions = ["--group-directories-first" "--header"];
       };
@@ -163,27 +152,11 @@ home-manager.users.torben = {
       enable = true;
       settings.git_protocol = "ssh";
       };
-    neovim = {
-      enable = true;
-      plugins = with pkgs.vimPlugins; [go-nvim];
-      };
-    vim = {
-      enable = true;
-      defaultEditor = true;
-      plugins = with pkgs.vimPlugins; [vim-shellcheck vim-go vim-git];
-      settings = {
-        expandtab = true;
-        mousehide = false;
-      };
-      extraConfig = ''
-        set nocompatible
-        set nobackup '';
-      };
     zsh = {
       enable = true;
       autocd = true;
       autosuggestion.enable = true;
-      defaultKeymap = "viins";
+      #defaultKeymap = "viins";
       syntaxHighlighting.enable = true;
       historySubstringSearch.enable = true;
       history = {
@@ -192,6 +165,18 @@ home-manager.users.torben = {
         share = true;
         };
       };
+      #vim = {
+        #enable = true;
+        #defaultEditor = false;
+        #plugins = with pkgs.vimPlugins; [vim-shellcheck vim-go vim-git];
+        #settings = {
+          #expandtab = true;
+          #mousehide = false;
+        #};
+        #extraConfig = ''
+          #set nocompatible
+          #set nobackup '';
+      #};
     };
   dconf = {
     enable = true;
@@ -205,7 +190,7 @@ home-manager.users.torben = {
           wireless-hid.extensionUuid
           wifi-qrcode.extensionUuid
           ];
-        favorite-apps = ["Alacritty.desktop" "kitty.desktop" "librewolf.desktop"];
+        favorite-apps = ["Nautilus.desktop" "Alacritty.desktop" "console.desktop" "librewolf.desktop" "Calendar.desktop" "textedit.desktop" "vscode.desktop"];
         };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
@@ -222,5 +207,3 @@ home-manager.users.torben = {
     };
   };
 }
-
-    
