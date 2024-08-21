@@ -66,7 +66,7 @@
   };
 
   # Dateisysteme
-  #fileSystems = {
+  fileSystems = {
     "/" = {
       device = "/dev/disk/by-diskseq/1-part3";
       fsType = "ext4";
@@ -136,7 +136,7 @@
     autoUpgrade = {
       enable = false;
       allowReboot = true;
-      dates = "hourly";
+      dates = "daily";
       flags = ["--update-input" "nixpkgs" "--update-input" "nixpkgs-Release" "--update-input" "home-manager" "--commit-lock-file"];
       operation = "switch"; # switch or boot
       persistent = true;
@@ -234,6 +234,7 @@
     useDHCP = lib.mkDefault true;
     enableIPv6 = lib.mkForce false;
     networkmanager.enable = true;
+    #wireless.enable = true;
     nftables.enable = true;
     firewall = {
       enable = true;

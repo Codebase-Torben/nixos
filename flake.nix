@@ -31,7 +31,6 @@
           home-manager.nixosModules.home-manager
           ./configuration.nix
           ./hardware/macbook.nix
-          #./hardware/intel.nix
           ./desktheme/gnome.nix
           ./users/torben.nix
 	  #./modules/office.nix
