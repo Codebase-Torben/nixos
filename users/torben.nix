@@ -83,13 +83,6 @@ home-manager.users.torben = {
       lazygit.enable = true;
       home-manager.enable = true;
       librewolf.enable = true;
-      kitty = {
-        enable = true;
-        settings = {
-          font_size = 12;
-          hide_window_decorations = false;
-          };
-        };
       alacritty = {
         enable = true;
         settings = {
@@ -168,7 +161,7 @@ home-manager.users.torben = {
         share = true;
         };
       };
-      #vim = {
+    #vim = {
         #enable = true;
         #defaultEditor = false;
         #plugins = with pkgs.vimPlugins; [vim-shellcheck vim-go vim-git];
@@ -193,7 +186,7 @@ home-manager.users.torben = {
           wireless-hid.extensionUuid
           wifi-qrcode.extensionUuid
           ];
-        favorite-apps = ["Nautilus.desktop" "Alacritty.desktop" "console.desktop" "librewolf.desktop" "Calendar.desktop" "textedit.desktop" "vscode.desktop"];
+        favorite-apps = ["org.gnome.Nautilus.desktop" "Alacritty.desktop" "org.gnome.Terminal.desktop" "librewolf.desktop" "org.gnome.Calendar.desktop" "org.gnome.Textedit.desktop" "code.desktop"];
         };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
