@@ -14,7 +14,7 @@
   boot = {
     # kernelParams = ["brcmfmac.feature_disable=0x82000"];
     # kernelParams = ["hid_apple.iso_layout=0"];
-    kernelParams = ["hid_apple.swap_opt_cmd=1" "i915.enable_fbc=1" "i915.enable_psr=2"];
+    kernelParams = ["hid_apple.swap_opt_cmd=1"];
     initrd = {
       availableKernelModules = [
         "applespi"
@@ -23,9 +23,6 @@
         "intel_lpss_pci"
       ];
     };
-    lib.mkIf config.services.tlp.enable {
-    kernelModules = [ "acpi_call" ];
-    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
   };
 
   # Hardware
