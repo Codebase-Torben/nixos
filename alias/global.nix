@@ -1,9 +1,9 @@
 {config, ...}: {
-  # Shell Aliase
+  # Shell Aliase #
   environment = {
     shellAliases = {
-    # NixOS Aliase
-      "nix.build" = ''            
+      # NixOS Aliase
+      "nix.build" = ''        
         cd /etc/nixos &&\
         env sudo -v &&\
         sudo alejandra --quiet . &&\
@@ -15,19 +15,19 @@
         export HSTNM="$(hostname)" ;\
         echo "############# ---> NIXOS-REBUILD NixOS [$HSTNM-$ZTSTMPL] <--- ##################"
         sudo nixos-rebuild boot -v --fallback --flake "/etc/nixos/.#$HSTNM" -p "$HSTNM-$ZTSTMPL" '';
-      "nix.repair" = ''            
+      "nix.repair" = ''        
         cd /etc/nixos &&\
         env sudo -v &&\
         sudo nix-store --gc ;\
         sudo nix-store --verify --check-contents --repair'';
-      "nix.clean" = ''            
+      "nix.clean" = ''        
         cd /etc/nixos &&\
         env sudo -v &&\
-        sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 13d ;\
+        sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 12d ;\
         sudo nix-collect-garbage --delete-older-than 12d ;\
         sudo nix-store --gc ;\
         sudo nix-store --optimise '';
-      "nix.cleanfull" = ''            
+      "nix.cleanfull" = ''        
         cd /etc/nixos &&\
         sudo -v &&\
         sudo rm /boot/loader/entries/nixos* ;\
@@ -90,7 +90,7 @@
       #sudo nixos-rebuild boot -v --fallback --flake /etc/nixos/#nixos         -p "nixos-$ZTSTMPL" ;\
       #sudo nixos-rebuild boot -v --fallback --flake /etc/nixos/#nixos-console -p "nixos-console-$ZTSTMPL" ;\
       #sudo nixos-rebuild boot -v --fallback --flake /etc/nixos/#$HSTNM        -p "$HSTNM-$ZTSTMPL" '';
-    # Globale Aliase
+      # Globale Aliase
       n = "nano";
       cro = "systemctl status chronyd ; chronyc tracking ; chronyc sources ; chronyc sourcestats ; sudo chronyc authdata ; sudo chronyc serverstats";
       termshark = "sudo termshark";
