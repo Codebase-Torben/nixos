@@ -33,6 +33,7 @@ home-manager.users.torben = {
       };
       file = {".config/starship.toml".source = ./resources/starship/colorconf.toml;};
       packages = with pkgs; [
+        audacity
         #asn
         #age #file encryption
         #bandwhich #Cli network utilization tool
@@ -49,6 +50,7 @@ home-manager.users.torben = {
         sysz
         tailspin
         kmon
+        krita
         kittysay
         moreutils
         fd
@@ -63,6 +65,7 @@ home-manager.users.torben = {
         ugm #Cli Usermanagement
         #viddy
         vulnix
+        vlc
         vscode
         xh #Tool for sending HTTP requests
         ];
@@ -183,7 +186,7 @@ home-manager.users.torben = {
           wireless-hid.extensionUuid
           wifi-qrcode.extensionUuid
           ];
-        favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "code.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop" "org.remmina.Remmina.desktop" "org.gnome.Settings.desktop"];
+        favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "code.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop" "org.gnome.Settings.desktop"];
         };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
