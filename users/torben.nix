@@ -192,9 +192,7 @@ home-manager.users.torben = {
         favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "code.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop" "org.gnome.Settings.desktop"];
         };
       "org/gnome/settings-daemon/plugins/media-keys" = {
-        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
-        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"];
-        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"];
+        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"];
         };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "Alacritty Terminal";
