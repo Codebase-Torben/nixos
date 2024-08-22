@@ -38,7 +38,6 @@
         gedit
         evince
         epiphany
-        xterm
       ])
       ++ (with pkgs.gnome; [
         #gnome-music
