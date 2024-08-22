@@ -149,7 +149,7 @@
   };
   time = {
     timeZone = "Europe/Berlin";
-    hardwareClockInLocalTime = true;
+    hardwareClockInLocalTime = false;
   };
   powerManagement = {
     enable = true;
