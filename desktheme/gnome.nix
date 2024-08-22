@@ -19,7 +19,7 @@
     };
   };
   environment = {
-    systemPackages =
+    systemPackages = 
       with pkgs.gnomeExtensions; [
         #apps-menu
         #places-status-indicator
