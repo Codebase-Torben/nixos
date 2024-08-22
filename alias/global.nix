@@ -3,7 +3,8 @@
   environment = {
     shellAliases = {
       # NixOS Aliase
-      "nix.build" = ''        
+      "nix.build" = ''
+        cd / &&\
         cd /etc/nixos &&\
         env sudo -v &&\
         sudo alejandra --quiet . &&\
@@ -15,19 +16,22 @@
         export HSTNM="$(hostname)" ;\
         echo "############# ---> NIXOS-REBUILD NixOS [$HSTNM-$ZTSTMPL] <--- ##################"
         sudo nixos-rebuild boot -v --fallback --flake "/etc/nixos/.#$HSTNM" -p "$HSTNM-$ZTSTMPL" '';
-      "nix.repair" = ''        
+      "nix.repair" = '' 
+        cd / &&\      
         cd /etc/nixos &&\
         env sudo -v &&\
         sudo nix-store --gc ;\
         sudo nix-store --verify --check-contents --repair'';
-      "nix.clean" = ''        
+      "nix.clean" = ''
+        cd / &&\        
         cd /etc/nixos &&\
         env sudo -v &&\
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 12d ;\
         sudo nix-collect-garbage --delete-older-than 12d ;\
         sudo nix-store --gc ;\
         sudo nix-store --optimise '';
-      "nix.cleanfull" = ''        
+      "nix.cleanfull" = ''
+        cd / &&\        
         cd /etc/nixos &&\
         sudo -v &&\
         sudo rm /boot/loader/entries/nixos* ;\
@@ -39,11 +43,13 @@
         sudo nix-store --gc ;\
         sudo nix-store --optimise '';
       #"nix.cacheall" = ''
+      #cd / &&\
       #cd /etc/nixos &&\
       #nix.update ;\
       #cd && mkdir -p cache && cd cache &&\
       #nixos-rebuild build -v --fallback --flake /etc/nixos/#FLAKE ;\
       #"nix.gitpush" = ''
+      #cd / &&\
       #cd /etc/nixos &&\
       #env sudo -v &&\
       #host github.com ;\
@@ -58,6 +64,7 @@
       #git gc --aggressive &&\
       #git push --force '';
       #"nix.test" = ''
+      #cd / &&\
       #cd /etc/nixos &&\
       #env sudo -v &&\
       #sudo alejandra --quiet . ;\
@@ -66,6 +73,7 @@
       #git commit -S -m update ;\
       #sudo nixos-rebuild dry-activate --flake /etc/nixos/.#$(hostname)'';
       #"nix.update" = ''
+      #cd / &&\
       #cd /etc/nixos &&\
       #env sudo -v &&\
       #sudo alejandra --quiet . &&\
@@ -91,16 +99,17 @@
       #sudo nixos-rebuild boot -v --fallback --flake /etc/nixos/#nixos-console -p "nixos-console-$ZTSTMPL" ;\
       #sudo nixos-rebuild boot -v --fallback --flake /etc/nixos/#$HSTNM        -p "$HSTNM-$ZTSTMPL" '';
       # Globale Aliase
-      n = "nano";
+      ed = "sudo nano";
       cro = "systemctl status chronyd ; chronyc tracking ; chronyc sources ; chronyc sourcestats ; sudo chronyc authdata ; sudo chronyc serverstats";
       termshark = "sudo termshark";
+      l = "ls -la";
       ll = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename";
       la = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=size";
       lt = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename --tree";
       lo = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename --octal-permissions";
       li = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=inode --inode";
       meow = "kittysay";
-      l = "ls -la";
+      b = "btop" 
       h = "htop --tree --highlight-changes";
       slog = "journalctl --follow --priority=7 --lines=2500";
     };
