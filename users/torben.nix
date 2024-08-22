@@ -180,9 +180,9 @@ home-manager.users.torben = {
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = with pkgs.gnomeExtensions; [
-          app-menu.extensionUuid
-          places-status-menu.extensionUuid
-          system-monitor.extensionUUid
+          #app-menu.extensionUuid
+          #places-status-menu.extensionUuid
+          system-monitor.extensionUuid
           #todotxt.extensionUuid
           #toggle-alacritty.extensionUuid
           #wireguard-vpn-extension.extensionUuid
