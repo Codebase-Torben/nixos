@@ -66,7 +66,7 @@
       gnome-keyring.enable = lib.mkForce false;
     };
     udisks2.enable = lib.mkForce true;
-    devmon.enable = lib.mkForce true;
+    #devmon.enable = lib.mkForce true;
     xserver = {
       displayManager.gdm = {
         enable = true;
