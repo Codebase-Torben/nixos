@@ -19,7 +19,7 @@
     };
   };
   environment = {
-    systemPackages = with pkgs.gnomeExtensions; [toggle-alacritty wireguard-vpn-extension wifi-qrcode];
+    systemPackages = with pkgs.gnomeExtensions; [apps-menu places-status-indicator system-monitor wifi-qrcode];
     gnome.excludePackages =
       (with pkgs; [
         gnome-tour
@@ -32,6 +32,7 @@
         gedit
         evince
         epiphany
+        xterm
       ])
       ++ (with pkgs.gnome; [
         #gnome-music
