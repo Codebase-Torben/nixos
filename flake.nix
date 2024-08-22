@@ -30,11 +30,11 @@
         modules = [
           home-manager.nixosModules.home-manager
           ./configuration.nix
-          ./hardware/macbook.nix
+          #./hardware/macbook.nix
           ./desktheme/gnome.nix
           ./users/torben.nix
 	  #./modules/office.nix
-          ./modules/timeserver.nix
+          #./modules/timeserver.nix
           {networking.hostName = "nixbook";}
         ];
       };
