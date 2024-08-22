@@ -109,7 +109,7 @@
       lo = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename --octal-permissions";
       li = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=inode --inode";
       meow = "kittysay";
-      b = "btop" 
+      b = "btop";
       h = "htop --tree --highlight-changes";
       slog = "journalctl --follow --priority=7 --lines=2500";
     };
