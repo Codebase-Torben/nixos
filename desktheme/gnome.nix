@@ -34,9 +34,9 @@
         epiphany
       ])
       ++ (with pkgs.gnome; [
-        gnome-music
+        #gnome-music
         gnome-contacts
-        gnome-characters
+        #gnome-characters
         tali
         iagno
         hitori
@@ -51,20 +51,20 @@
       core-utilities.enable = lib.mkForce true;
       games.enable = lib.mkForce false;
       gnome-browser-connector.enable = lib.mkForce false;
-      gnome-initial-setup.enable = lib.mkForce true;
+      gnome-initial-setup.enable = lib.mkForce false;
       gnome-online-accounts.enable = lib.mkForce true;
       gnome-online-miners.enable = lib.mkForce false;
       gnome-remote-desktop.enable = lib.mkForce false;
       gnome-user-share.enable = lib.mkForce true;
       gnome-keyring.enable = lib.mkForce false;
     };
-    udisks2.enable = lib.mkForce true;
-    #devmon.enable = lib.mkForce true;
+    #udisks2.enable = lib.mkForce true;
+    devmon.enable = lib.mkForce true;
     xserver = {
       displayManager.gdm = {
         enable = true;
         autoSuspend = false;
-        banner = ''NixOS gnome Desktop '';
+        banner = ''Luna v1.01 (NixOS 24.05 gnome Desktop)'';
       };
       desktopManager = {
         gnome = {
