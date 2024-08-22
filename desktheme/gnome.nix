@@ -59,13 +59,13 @@
       gnome-user-share.enable = lib.mkForce true;
       gnome-keyring.enable = lib.mkForce false;
     };
-    #udisks2.enable = lib.mkForce true;
+    udisks2.enable = lib.mkForce true;
     devmon.enable = lib.mkForce true;
     xserver = {
       displayManager.gdm = {
         enable = true;
         autoSuspend = false;
-        banner = ''Luna v1.01 (NixOS 24.05 gnome Desktop)'';
+        banner = ''Luna v1.02 (NixOS 24.05 gnome Desktop)'';
       };
       desktopManager = {
         gnome = {
