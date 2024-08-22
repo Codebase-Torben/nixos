@@ -19,12 +19,15 @@
     };
   };
   environment = {
-    systemPackages = with pkgs.gnomeExtensions; [
-      apps-menu
-      places-status-indicator
-      system-monitor
-      wifi-qrcode
-      ];
+    systemPackages = {
+      pkgs.excludePackages = xterm
+      with pkgs.gnomeExtensions; [
+        #apps-menu
+        #places-status-indicator
+        system-monitor
+        wifi-qrcode
+        ];
+      };
     gnome.excludePackages =
       (with pkgs; [
         gnome-tour
