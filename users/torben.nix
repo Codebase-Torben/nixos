@@ -183,9 +183,9 @@ home-manager.users.torben = {
           #app-menu.extensionUuid
           #places-status-menu.extensionUuid
           system-monitor.extensionUuid
-          #todotxt.extensionUuid
+          todotxt.extensionUuid
           #toggle-alacritty.extensionUuid
-          #wireguard-vpn-extension.extensionUuid
+          wireguard-vpn-extension.extensionUuid
           wireless-hid.extensionUuid
           wifi-qrcode.extensionUuid
           ];
