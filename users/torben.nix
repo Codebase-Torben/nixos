@@ -10,7 +10,7 @@
 users.users.torben = {
   initialHashedPassword = "$y$j9T$SSQCI4meuJbX7vzu5H.dR.$VUUZgJ4mVuYpTu3EwsiIRXAibv2ily5gQJNAHgZ9SG7"; # start
   description = "Torben";
-  uid = 40100;
+  uid = 1000;
   group = "users";
   createHome = true;
   isNormalUser = true;
