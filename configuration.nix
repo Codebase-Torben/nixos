@@ -83,7 +83,7 @@
     blacklistedKernelModules = ["ax25" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "sysv"];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = ["page_alloc.shuffle=1" "ipv6.disable=1"];
-    kernelModules = ["acpi_call" "kvm-intel" "kvm-amd" "vfat" "exfat" "apfs"];
+    kernelModules = ["acpi_call" "kvm-intel" "kvm-amd" "vfat" "exfat" "ext4" "fuse" "apfs-fuse"];
     readOnlyNixStore = lib.mkForce true;
     initrd = {
       systemd.enable = lib.mkForce false;
