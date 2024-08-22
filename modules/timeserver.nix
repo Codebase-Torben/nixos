@@ -16,7 +16,7 @@
       "oregon.time.system76.com"
       "virginia.time.system76.com"
       "stratum1.time.cifelli.xyz"
-      "time.txryan.com"
+      #"time.txryan.com"
     ];
   };
 }
