@@ -193,11 +193,23 @@ home-manager.users.torben = {
         };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"];
+        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"];
+        custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"];
         };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        name = "alacritty terminal";
+        name = "Alacritty Terminal";
         command = "alacritty";
         binding = "<Super>Return";
+        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        name = "Editor";
+        command = "gnome-text-editor";
+        binding = "LaunchA";
+        };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        name = "Dateimanager";
+        command = "nautilus";
+        binding = "LaunchB";
         };
       "org/gnome/desktop/interface" = {
         clock-show-weekday = true;
