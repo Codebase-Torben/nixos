@@ -53,8 +53,9 @@
         sudo nix flake lock --update-input nixpkgs --update-input nixpkgs-Release --update-input home-manager ;\
         sudo alejandra --quiet .'';
       # Globale Aliase
+      etcnix = "cd / && cd /etc/nixos";
+      homet = "cd / && cd /home/torben";
       ed = "sudo nano";
-      cro = "systemctl status chronyd ; chronyc tracking ; chronyc sources ; chronyc sourcestats ; sudo chronyc authdata ; sudo chronyc serverstats";
       termshark = "sudo termshark";
       l = "ls -la";
       ll = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=filename";
@@ -65,6 +66,7 @@
       meow = "kittysay";
       b = "btop";
       h = "htop --tree --highlight-changes";
+      time = "timedatectl && timedatectl timesync-status";
       slog = "journalctl --follow --priority=7 --lines=2500";
     };
   };
