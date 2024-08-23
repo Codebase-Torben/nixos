@@ -19,33 +19,35 @@
     };
   };
   environment = {
-    systemPackages = with pkgs.gnomeExtensions; [
+    systemPackages = {
+      with pkgs.gnomeExtensions; [
         #apps-menu
         #places-status-indicator
         system-monitor
         wifi-qrcode
       ];
       excludePackages = pkgs.xterm;
-      gnome.excludePackages = (with pkgs; [
-        gnome-tour
-        #gnome-calendar
-        #gnome-terminal
-        totem
-        geary
-        cheese
-        gnome-photos
-        gedit
-        evince
-        epiphany
-      ]) ++ (with pkgs.gnome; [
-        #gnome-music
-        gnome-contacts
-        #gnome-characters
-        tali
-        iagno
-        hitori
-        atomix
-      ]);
+    };
+    gnome.excludePackages = (with pkgs; [
+      gnome-tour
+      #gnome-calendar
+      #gnome-terminal
+      totem
+      geary
+      cheese
+      gnome-photos
+      gedit
+      evince
+      epiphany
+    ]) ++ (with pkgs.gnome; [
+      #gnome-music
+      gnome-contacts
+      #gnome-characters
+      tali
+      iagno
+      hitori
+      atomix
+    ]);
   };
 
   # Dienste
