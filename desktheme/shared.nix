@@ -23,6 +23,7 @@
     variables = {
       BROWSER = "librewolf";
       TERMINAL = "alacritty";
+      MUSIC = "gnome-music";
     };
   };
 
@@ -39,10 +40,6 @@
     };
     pipewire = {
       enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
       pulse.enable = true;
     };
   };
