@@ -231,7 +231,6 @@
     useDHCP = lib.mkDefault true;
     enableIPv6 = lib.mkForce false;
     networkmanager.enable = true;
-    wireless.enable = true;
     nftables.enable = true;
     firewall = {
       enable = true;
@@ -253,13 +252,13 @@
     };
   };
 
-  # home-manager
+  # Home-Manager
   home-manager = {
     useUserPackages = true;
     backupFileExtension = "backup";
   };
 
-  # General Programme
+  # Generelle Programme
   programs = {
     gnupg.agent.enable = true;
     nano.enable = true;
