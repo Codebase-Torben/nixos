@@ -1,5 +1,6 @@
 # flake.nix
 {
+  # NixOS Luna v 1.04 Mager Edition
   description = "nixos generic flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
