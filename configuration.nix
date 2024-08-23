@@ -83,7 +83,7 @@
     blacklistedKernelModules = ["ax25" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "sysv"];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = ["page_alloc.shuffle=1" "ipv6.disable=1"];
-    kernelModules = ["acpi_call" "kvm-intel" "kvm-amd" "vfat" "exfat" "ext4" "fuse" "apfs-fuse"];
+    kernelModules = ["acpi_call" "kvm-intel" "vfat" "exfat" "ext4" "fuse"];
     readOnlyNixStore = lib.mkForce true;
     initrd = {
       systemd.enable = lib.mkForce false;
@@ -180,9 +180,6 @@
   # Hardware
   hardware = {
     cpu = {
-      amd = {
-        updateMicrocode = lib.mkForce true;
-      };
       intel = {
         updateMicrocode = lib.mkForce true;
         sgx.provision.enable = lib.mkForce false;
@@ -348,16 +345,16 @@
 
   # Dienste
   services = {
-    # power-profiles-daemon.enable = true;
-    # thermald.enable = true;
+    #power-profiles-daemon.enable = true;
+    thermald.enable = true;
     logind.hibernateKey = "ignore";
-    #opensnitch = {
-      #enable = false;
-      #settings = {
-        #firewall = "nftables";
-        #defaultAction = "deny";
-      #};
-    #};
+    opensnitch = {
+      enable = false;
+      settings = {
+        firewall = "nftables";
+        defaultAction = "deny";
+      };
+    };
     fstrim = {
       enable = true;
       #interval = "monthly";
