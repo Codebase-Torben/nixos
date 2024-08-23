@@ -34,9 +34,8 @@ home-manager.users.torben = {
       file = {".config/starship.toml".source = ./resources/starship/colorconf.toml;};
       packages = with pkgs; [
         audacity
-        #asn
         #age #file encryption
-        #bandwhich #Cli network utilization tool
+        bandwhich #Cli network utilization tool
         bmon
         dnsutils
         dig
