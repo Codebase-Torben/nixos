@@ -35,7 +35,7 @@ home-manager.users.torben = {
       packages = with pkgs; [
         audacity
         #age #file encryption
-        bandwhich #Cli network utilization tool
+        #bandwhich #Cli network utilization tool
         bmon
         dnsutils
         dig
