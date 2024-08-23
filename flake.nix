@@ -35,7 +35,7 @@
           ./desktheme/gnome.nix
           ./users/torben.nix
 	  #./modules/office.nix
-          #./modules/timeserver.nix
+          ./modules/timeserver.nix
           {networking.hostName = "nixbook";}
         ];
       };
