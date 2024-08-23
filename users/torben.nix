@@ -1,4 +1,4 @@
-# Konfiguration des Userhome mit home-manger 
+su# Konfiguration des Userhome mit home-manger 
 {
   config,
   pkgs,
@@ -200,7 +200,7 @@ home-manager.users.torben = {
         };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         name = "Editor";
-        command = "gnome-text-editor";
+        command = "sudo gnome-text-editor";
         binding = "LaunchA";
         };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
