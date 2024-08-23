@@ -182,6 +182,7 @@
     cpu = {
       intel = {
         updateMicrocode = lib.mkForce true;
+        sgx.enable = lib.mkForce false;
         sgx.provision.enable = lib.mkForce false;
       };
     };
@@ -231,7 +232,7 @@
     useDHCP = lib.mkDefault true;
     enableIPv6 = lib.mkForce false;
     networkmanager.enable = true;
-    #wireless.enable = true;
+    wireless.enable = true;
     nftables.enable = true;
     firewall = {
       enable = true;
