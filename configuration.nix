@@ -182,7 +182,6 @@
     cpu = {
       intel = {
         updateMicrocode = lib.mkForce true;
-        sgx.enable = lib.mkForce false;
         sgx.provision.enable = lib.mkForce false;
       };
     };
