@@ -19,15 +19,14 @@
     };
   };
   environment = {
-    systemPackages = 
-      with pkgs.gnomeExtensions; [
+    systemPackages = with pkgs.gnomeExtensions; [
         #apps-menu
         #places-status-indicator
         system-monitor
         wifi-qrcode
       ];
-    gnome.excludePackages =
-      (with pkgs; [
+      excludePackages = pkgs.xterm;
+      gnome.excludePackages = (with pkgs; [
         gnome-tour
         #gnome-calendar
         #gnome-terminal
@@ -38,8 +37,7 @@
         gedit
         evince
         epiphany
-      ])
-      ++ (with pkgs.gnome; [
+      ]) ++ (with pkgs.gnome; [
         #gnome-music
         gnome-contacts
         #gnome-characters
@@ -70,7 +68,7 @@
       displayManager.gdm = {
         enable = true;
         autoSuspend = false;
-        banner = ''Luna v1.03 (NixOS 24.05 gnome Desktop)'';
+        banner = ''Luna v1.04 ME (NixOS 24.05 gnome Desktop)'';
       };
       desktopManager = {
         gnome = {
