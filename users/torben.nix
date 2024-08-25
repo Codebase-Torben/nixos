@@ -1,4 +1,4 @@
-su# Konfiguration des Userhome mit home-manger 
+# Konfiguration des Userhome mit home-manger 
 {
   config,
   pkgs,
@@ -6,7 +6,7 @@ su# Konfiguration des Userhome mit home-manger
   home-manager,
   ...
 }: {
-# users
+# Benutzer
 users.users.torben = {
   initialHashedPassword = "$y$j9T$SSQCI4meuJbX7vzu5H.dR.$VUUZgJ4mVuYpTu3EwsiIRXAibv2ily5gQJNAHgZ9SG7"; # start
   description = "Torben";
@@ -16,7 +16,6 @@ users.users.torben = {
   isNormalUser = true;
   shell = pkgs.zsh;
   extraGroups = ["wheel" "networkmanager" "audio" "storage" "input" "video" "docker" "libvirtd" "qemu-libvirtd"];
-  #openssh.authorizedKeys.keys = ["ssh-ed25519 AAA-#locked#-"];
 };
 # home-manager
 home-manager.users.torben = {
@@ -28,7 +27,6 @@ home-manager.users.torben = {
       sessionVariables = {
         EDITOR = "nano";
         VISUAL = "nano";
-        #PAGER = "bat";
         SHELLCHECK_OPTS = "-e SC2086";
       };
       file = {".config/starship.toml".source = ./resources/starship/colorconf.toml;};
@@ -91,12 +89,9 @@ home-manager.users.torben = {
         scrolling = {
           history = 50000;
           };
-        mouse = {
-          hide_when_typing = true;
-          };
         font.size = 12;
         colors.primary = {
-          background = "#000000";
+          background = "#222234";
           foreground = "#fffbf6";
           };
         colors.normal = {
