@@ -13,7 +13,7 @@
       "storecheck" = '' 
         etcnix
         sudo nix-store --gc ;\
-        sudo nix-store --verify --check-contents --repair'';
+        sudo nix-store --verify --check-contents --repair '';
       "clean6" = ''
         etcnix
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 6d ;\
