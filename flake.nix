@@ -1,6 +1,6 @@
 # flake.nix
 {
-  # NixOS Luna v 1.04 Mager Edition
+  # NixOS Luna v 1.05 Alias Edition
   description = "nixos generic flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -31,11 +31,11 @@
         modules = [
           home-manager.nixosModules.home-manager
           ./configuration.nix
-          #./hardware/macbook.nix
+          ./hardware/macbook.nix
           ./desktheme/gnome.nix
           ./users/torben.nix
           ./modules/office.nix
-          #./modules/timeserver.nix
+          ./modules/timeserver.nix
           {networking.hostName = "nixbook";}
         ];
       };
