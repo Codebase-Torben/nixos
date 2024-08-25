@@ -129,7 +129,7 @@ home-manager.users.torben = {
       #};
     eza = {
       enable = true;
-      git = true
+      git = true;
       icons = true;
       extraOptions = ["--group-directories-first" "--header"];
       };
