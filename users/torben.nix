@@ -159,18 +159,6 @@ home-manager.users.torben = {
         share = true;
         };
       };
-      #vim = {
-        #enable = true;
-        #defaultEditor = false;
-        #plugins = with pkgs.vimPlugins; [vim-shellcheck vim-go vim-git];
-        #settings = {
-          #expandtab = true;
-          #mousehide = false;
-        #};
-        #extraConfig = ''
-          #set nocompatible
-          #set nobackup '';
-      #};
     };
   dconf = {
     enable = true;
