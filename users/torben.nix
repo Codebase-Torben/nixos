@@ -122,7 +122,6 @@ home-manager.users.torben = {
       };
     atuin = {
       enable = true;
-      #flags = ["--disable-up-arrow"];
       };
     #bat = { #broken since 20082024
       #enable = true;
@@ -130,7 +129,7 @@ home-manager.users.torben = {
       #};
     eza = {
       enable = true;
-      #git = true;
+      git = true
       icons = true;
       extraOptions = ["--group-directories-first" "--header"];
       };
@@ -182,7 +181,7 @@ home-manager.users.torben = {
         };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         name = "Editor";
-        command = "sudo gnome-text-editor";
+        command = "gnome-text-editor";
         binding = "LaunchA";
         };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
