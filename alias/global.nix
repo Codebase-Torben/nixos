@@ -2,59 +2,37 @@
   # Shell Aliase #
   environment = {
     shellAliases = {
-      # NixOS Aliase
-      "nix.build" = ''
-        cd / &&\
-        cd /etc/nixos &&\
-        env sudo -v &&\
-        sudo alejandra --quiet . &&\
+      # Aliase
+      etcnix = "cd / && cd /etc/nixos";
+      homet = "cd / && cd /home/torben";
+      "neubauen" = ''
+        etcnix
         export ZTSTMPL="-$(date '+%Y-%m-%d--%H-%M')" ;\
-        export HSTNM="$(hostname)" ;\
-        echo "############# ---> NIXOS-REBUILD NixOS [$HSTNM-$ZTSTMPL] <--- ##################"
-        sudo nixos-rebuild boot -v --fallback --flake "/etc/nixos/.#$HSTNM" -p "$HSTNM-$ZTSTMPL" '';
-      "nix.repair" = '' 
-        cd / &&\      
-        cd /etc/nixos &&\
-        env sudo -v &&\
+        echo "############# ---> Dein NixOS wird gebaut [$ZTSTMPL] <--- ##################"
+        sudo nixos-rebuild boot -v --fallback --flake "/etc/nixos/.flake.nix -p "NixOS Luna $ZTSTMPL" '';
+      "storecheck" = '' 
+        etcnix
         sudo nix-store --gc ;\
         sudo nix-store --verify --check-contents --repair'';
-      "nix.clean" = ''
-        cd / &&\        
-        cd /etc/nixos &&\
-        env sudo -v &&\
-        sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 13d ;\
-        sudo nix-collect-garbage --delete-older-than 13d ;\
+      "clean6" = ''
+        etcnix
+        sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 6d ;\
+        sudo nix-collect-garbage --delete-older-than 6d ;\
         sudo nix-store --gc ;\
         sudo nix-store --optimise '';
-      "nix.cleanfull" = ''
-        cd / &&\        
-        cd /etc/nixos &&\
-        sudo -v &&\
+      "cleanall" = ''
+        etcnix
         sudo rm /boot/loader/entries/nixos* ;\
         sudo rm -rf /nix/var/nix/profiles/system* ;\
         sudo mkdir -p /nix/var/nix/profiles/system-profiles ;\
-        nix.build &&\
+        neubauen &&\
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 1d ;\
         sudo nix-collect-garbage --delete-older-than 1d ;\
         sudo nix-store --gc ;\
         sudo nix-store --optimise '';
-      "nix.test" = ''
-        cd / &&\
-        cd /etc/nixos &&\
-        env sudo -v &&\
-        sudo alejandra --quiet . ;\
-        sudo nixos-rebuild dry-activate --flake /etc/nixos/.#$(hostname)'';
-      "nix.update" = ''
-        cd / &&\
-        cd /etc/nixos &&\
-        env sudo -v &&\
-        sudo alejandra --quiet . &&\
-        sudo chown -R me:users .git &&\
-        sudo nix flake lock --update-input nixpkgs --update-input nixpkgs-Release --update-input home-manager ;\
-        sudo alejandra --quiet .'';
-      # Globale Aliase
-      etcnix = "cd / && cd /etc/nixos";
-      homet = "cd / && cd /home/torben";
+      "testbuild" = ''
+        etcnix
+        sudo nixos-rebuild dry-activate --flake /etc/nixos/.flake.nix '';
       ed = "sudo nano";
       termshark = "sudo termshark";
       l = "ls -la";
