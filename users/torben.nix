@@ -151,7 +151,6 @@ home-manager.users.torben = {
       enable = true;
       autocd = true;
       autosuggestion.enable = true;
-      #defaultKeymap = "viins";
       syntaxHighlighting.enable = true;
       historySubstringSearch.enable = true;
       history = {
