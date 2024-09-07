@@ -246,13 +246,13 @@
     };
   };
 
-  # Home-Manager
+  # home-manager
   home-manager = {
     useUserPackages = true;
     backupFileExtension = "backup";
   };
 
-  # Generelle Programme
+  # General Programme
   programs = {
     gnupg.agent.enable = true;
     nano.enable = true;
