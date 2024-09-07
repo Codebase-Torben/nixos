@@ -37,7 +37,7 @@
         bmon
         dnsutils
         dig
-        bitwarden-desktop
+        #bitwarden-desktop
         #git-crypt
         #git-agecrypt
         #httpie
