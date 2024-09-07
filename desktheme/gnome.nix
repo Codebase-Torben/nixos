@@ -1,3 +1,4 @@
+# NixOS Luna v 1.06 Mail Edition
 {
   config,
   pkgs,
@@ -11,7 +12,7 @@
 
   # Gnome Programme
   programs = {
-    geary.enable = lib.mkForce false;
+    geary.enable = lib.mkForce true;
     seahorse.enable = lib.mkForce false;
     dconf = {
       enable = true;
@@ -20,31 +21,33 @@
   };
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [
-        #apps-menu
-        #places-status-indicator
-        system-monitor
-        wifi-qrcode
-      ];
-    gnome.excludePackages = (with pkgs; [
-      gnome-tour
-      #gnome-calendar
-      #gnome-terminal
-      totem
-      geary
-      cheese
-      gnome-photos
-      gedit
-      evince
-      epiphany
-    ]) ++ (with pkgs.gnome; [
-      #gnome-music
-      gnome-contacts
-      #gnome-characters
-      tali
-      iagno
-      hitori
-      atomix
-    ]);
+      #apps-menu
+      #places-status-indicator
+      system-monitor
+      wifi-qrcode
+    ];
+    gnome.excludePackages =
+      (with pkgs; [
+        gnome-tour
+        #gnome-calendar
+        #gnome-terminal
+        totem
+        #geary
+        cheese
+        gnome-photos
+        gedit
+        evince
+        epiphany
+      ])
+      ++ (with pkgs.gnome; [
+        #gnome-music
+        #gnome-contacts
+        #gnome-characters
+        tali
+        iagno
+        hitori
+        atomix
+      ]);
   };
 
   # Dienste
@@ -59,7 +62,7 @@
       gnome-online-miners.enable = lib.mkForce false;
       gnome-remote-desktop.enable = lib.mkForce false;
       gnome-user-share.enable = lib.mkForce true;
-      gnome-keyring.enable = lib.mkForce false;
+      gnome-keyring.enable = lib.mkForce true;
     };
     udisks2.enable = lib.mkForce true;
     #devmon.enable = lib.mkForce true;
@@ -67,7 +70,7 @@
       displayManager.gdm = {
         enable = true;
         autoSuspend = false;
-        banner = ''Luna v1.05 AE (NixOS 24.05 gnome Desktop)'';
+        banner = ''Luna v1.06 ME (NixOS 24.05 gnome Desktop)'';
       };
       desktopManager = {
         gnome = {

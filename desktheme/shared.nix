@@ -24,6 +24,7 @@
       BROWSER = "librewolf";
       TERMINAL = "alacritty";
       MUSIC = "gnome-music";
+      EMAIL = "geary";
     };
   };
 
