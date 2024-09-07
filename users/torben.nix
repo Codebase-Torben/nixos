@@ -53,7 +53,7 @@
         moreutils
         fd
         #oha #Webserver tests
-        remmina
+        #remmina #i use gnome-connectons instead
         tree
         #trippy
         termshark
