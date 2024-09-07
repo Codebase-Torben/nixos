@@ -27,7 +27,9 @@
         sudo rm /boot/loader/entries/nixos* ;\
         sudo rm -rf /nix/var/nix/profiles/system* ;\
         sudo mkdir -p /nix/var/nix/profiles/system-profiles ;\
-        neubauen &&\
+        echo " " ;\
+        echo "!!! Achtung, es wurden alle Profile gelöscht. Es muss mindestens einen Rebuild geben." ;\
+        echo " " ;\
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 1d ;\
         sudo nix-collect-garbage --delete-older-than 1d ;\
         sudo nix-store --gc ;\
