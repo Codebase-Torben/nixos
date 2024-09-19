@@ -27,7 +27,7 @@
 
   # Hardware
   hardware = {
-    facetimehd.enable = lib.mkForce false;
+    facetimehd.enable = lib.mkForce true;
   };
 
   # Netzwerk
