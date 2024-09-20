@@ -52,6 +52,9 @@
         kittysay
         moreutils
         fd
+        nix-tree
+        nix-search-cli
+        nix-output-monitor
         #oha #Webserver tests
         #remmina #i use gnome-connectons instead
         tree
