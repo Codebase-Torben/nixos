@@ -46,7 +46,7 @@
       meow = "kittysay";
       b = "btop";
       h = "htop --tree --highlight-changes";
-      time = "timedatectl && timedatectl timesync-status";
+      time = "timedatectl && chronyc tracking && chronyc activity";
       slog = "journalctl --follow --priority=7 --lines=2500";
     };
   };
