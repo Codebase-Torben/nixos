@@ -285,7 +285,7 @@
         user = {
           email = "nix@nixos.local";
           name = "NIXOS, Generic Local";
-          signingkey = "~/.ssh/id_ed25519.pub";
+          signingkey = "~/.ssh/schluessel4git.pub";
         };
         http = {
           sslVerify = "true";
