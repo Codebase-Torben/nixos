@@ -62,7 +62,7 @@
   # Dateisysteme
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-diskseq/1-part3";
+      device = "/dev/disk/by-diskseq/1-part2";
       fsType = "ext4";
     };
     "/boot" = {
