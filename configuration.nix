@@ -283,8 +283,8 @@
         safe.directory = "/etc/nixos";
         gpg.format = "ssh";
         user = {
-          email = "nix@nixos.local";
-          name = "NIXOS, Generic Local";
+          email = "dauben_01_verehrer@icloud.com";
+          name = "Git Signing";
           signingkey = "~/.ssh/schluessel4git.pub";
         };
         http = {
