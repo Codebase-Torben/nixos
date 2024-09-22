@@ -1,4 +1,4 @@
-# NixOS Luna v 1.06 Mail Edition
+# NixOS Luna v 1.07 Home Edition Alpha 22.09.2024
 {
   config,
   pkgs,
@@ -70,7 +70,7 @@
       displayManager.gdm = {
         enable = true;
         autoSuspend = false;
-        banner = ''Luna v1.06 ME (NixOS 24.05 gnome Desktop)'';
+        banner = ''Luna v1.07 Home Edition (NixOS 24.05 gnome Desktop)'';
       };
       desktopManager = {
         gnome = {
