@@ -13,7 +13,8 @@
         branch.sort = "-committerdate";
         commit.gpgsign = true;
         init.defaultBranch = "main";
-        safe.directory = "/etc/nixos";
+        safe.directory = "/home/torben/safegit";
+        #safe.directory = "/etc/nixos";
         gpg.format = "ssh";
         user = {
           email = "torben@nixbook";
