@@ -32,8 +32,8 @@
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 1d ;\
         sudo nix-collect-garbage --delete-older-than 1d ;\
         sudo nix-store --gc ;\
-        sudo nix-store --optimise ''
-        neubauen;
+        sudo nix-store --optimise ;\
+        neubauen '';
       testbuild = "sudo nixos-rebuild dry-activate -v";
       ed = "sudo nano";
       termshark = "sudo termshark";
