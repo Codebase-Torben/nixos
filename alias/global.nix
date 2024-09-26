@@ -8,10 +8,12 @@
       "neubauen" = ''
         etcnix ;\
         export ZTSTMPL="$(date '+%d-%m-%Y_%H-%M')" ;\
+        export HNAME="$(hostname)" ;\
         echo " " ;\
-        echo "############# ---> Dein NixOS wird gebaut (NixOS_Luna_v1.0x_$ZTSTMPL) <--- ##################" ;\
-        echo " " ;\
-        sudo nixos-rebuild boot -v --fallback --flake "/etc/nixos/flake.nix" -p "NixOS_Luna_v1.0x_$ZTSTMPL" '';
+        echo "-+-*-+*M*+-*-+--> Dein NixOS wird gebaut (NixOS Luna v1.0x vom $ZTSTMPL) <--+-*-+*M*+-*-+-" ;\ &&\
+        sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
+        sudo rm -f result ;\
+        sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS Luna v1.0x vom $ZTSTMPL" '';
       "storecheck" = ''             
         etcnix ;\
         sudo nix-store --gc ;\
@@ -27,13 +29,11 @@
         sudo rm /boot/loader/entries/nixos* ;\
         sudo rm -rf /nix/var/nix/profiles/system* ;\
         sudo mkdir -p /nix/var/nix/profiles/system-profiles ;\
-        echo " " ;\
-        echo "!!! Achtung, es wurden alle Profile gelöscht. Es muss mindestens einen Rebuild geben." ;\
-        echo " " ;\
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 1d ;\
         sudo nix-collect-garbage --delete-older-than 1d ;\
         sudo nix-store --gc ;\
-        sudo nix-store --optimise '';
+        sudo nix-store --optimise ''
+        neubauen;
       testbuild = "sudo nixos-rebuild dry-activate -v";
       ed = "sudo nano";
       termshark = "sudo termshark";
