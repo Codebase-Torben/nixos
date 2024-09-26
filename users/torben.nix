@@ -125,7 +125,8 @@
         };
       };
       atuin = {
-        enable = false;
+        enable = true;
+        flags = ["--disable-up-arrow"];
       };
       bat = {
       enable = false;
