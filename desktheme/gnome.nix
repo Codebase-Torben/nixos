@@ -65,11 +65,11 @@
       gnome-keyring.enable = lib.mkForce true;
     };
     udisks2.enable = lib.mkForce true;
-    #devmon.enable = lib.mkForce true;
+    devmon.enable = lib.mkForce true;
     xserver = {
       displayManager.gdm = {
         enable = true;
-        autoSuspend = false;
+        autoSuspend = true;
         banner = ''Luna v1.07 Home Edition (NixOS 24.05 gnome Desktop)'';
       };
       desktopManager = {
