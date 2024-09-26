@@ -10,7 +10,7 @@
         export ZTSTMPL="$(date '+%d-%m-%Y_%H-%M')" ;\
         export HNAME="$(hostname)" ;\
         echo " " ;\
-        echo "-+-*-+*M*+-*-+--> Dein NixOS wird gebaut (NixOS Luna v1.0x vom $ZTSTMPL) <--+-*-+*M*+-*-+-" ;\ &&\
+        echo "-+-*-+*M*+-*-+--> Dein NixOS wird gebaut (NixOS Luna v1.0x vom $ZTSTMPL) <--+-*-+*M*+-*-+-" &&\
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
         sudo rm -f result ;\
         sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS Luna v1.0x vom $ZTSTMPL" '';
