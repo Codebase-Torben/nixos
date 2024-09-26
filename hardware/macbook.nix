@@ -5,12 +5,6 @@
   modulesPath,
   ...
 }: {
-  # Import
-  # imports = [
-    # (modulesPath + "/hardware/network/broadcom-43xx.nix")
-    # (modulesPath + "/installer/scan/not-detected.nix")
-  # ];
-
   # nixpkgs
   nixpkgs = {
     config.allowUnfree = lib.mkDefault true;
@@ -35,7 +29,7 @@
   # Hardware
   hardware = {
     enableAllFirmware = lib.mkForce true;
-    facetimehd.enable = lib.mkForce true;
+    facetimehd.enable = lib.mkForce false;
     graphics.extraPackages = with pkgs; [intel-vaapi-driver intel-ocl intel-media-driver];
     cpu = {
       intel = {
