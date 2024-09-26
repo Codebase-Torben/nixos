@@ -33,6 +33,7 @@
         sudo nix-collect-garbage --delete-older-than 1d ;\
         sudo nix-store --gc ;\
         sudo nix-store --optimise ;\
+        echo "-+-*-+*M*+-*-+--> Da alle Profile entfernt wurden wird ein neues erstellt <--+-*-+*M*+-*-+-" &&\
         neubauen '';
       testbuild = "sudo nixos-rebuild dry-activate -v";
       ed = "sudo nano";
