@@ -179,7 +179,7 @@
       };
     };
     enableRedistributableFirmware = lib.mkForce true;
-    pulseaudio.enable = true;
+    pulseaudio.enable = false;
   };
 
   # Sicherheit
