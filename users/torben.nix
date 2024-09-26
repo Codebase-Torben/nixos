@@ -125,12 +125,12 @@
         };
       };
       atuin = {
-        enable = true;
+        enable = false;
       };
-      #bat = { #broken since 20082024
-      #enable = true;
+      bat = {
+      enable = false;
       #extraPackages = with pkgs.bat-extras; [batdiff batman batgrep batwatch prettybat];
-      #};
+      };
       eza = {
         enable = true;
         git = true;
