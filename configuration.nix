@@ -90,11 +90,11 @@
         "xhci_pci"
       ];
     };
-    tmp = {
-      cleanOnBoot = true;
-      useTmpfs = true;
-      tmpfsSize = "85%";
-    };
+    #tmp = {
+      #cleanOnBoot = true;
+      #useTmpfs = true;
+      #tmpfsSize = "85%";
+    #};
     loader = {
       efi = {
         canTouchEfiVariables = false;
@@ -153,13 +153,12 @@
   console = {
     earlySetup = lib.mkForce true;
     keyMap = "de";
-    #font = "";
   };
-  swapDevices = [];
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-  };
+  #swapDevices = [];
+  #zramSwap = {
+    #enable = true;
+    #algorithm = "zstd";
+  #};
 
   # systemd
   systemd = {
@@ -192,16 +191,11 @@
       rules = ["-a exit,always -F arch=b64 -S execve"];
     };
     allowSimultaneousMultithreading = true;
-    lockKernelModules = lib.mkForce true;
+    lockKernelModules = lib.mkForce false; # set true for Kernel hardening
     protectKernelImage = lib.mkForce true;
     apparmor = {
       enable = lib.mkForce true;
       killUnconfinedConfinables = lib.mkForce true;
-    };
-    dhparams = {
-      enable = true;
-      stateful = false;
-      defaultBitSize = "3072";
     };
     doas = {
       enable = false;
@@ -309,19 +303,15 @@
 
   # Dienste
   services = {
-    #power-profiles-daemon.enable = true;
     thermald.enable = true;
-    logind.hibernateKey = "ignore";
-    opensnitch = {
-      enable = false;
-      settings = {
-        firewall = "nftables";
-        defaultAction = "deny";
-      };
-    };
-    fstrim = {
-      enable = true;
-      #interval = "monthly";
-    };
+    #power-profiles-daemon.enable = true;
+    #logind.hibernateKey = "ignore";
+    #opensnitch = {
+      #enable = false;
+      #settings = {
+        #firewall = "nftables";
+        #defaultAction = "deny";
+      #};
+    #};
   };
 }
