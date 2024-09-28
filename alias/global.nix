@@ -1,4 +1,7 @@
-{config, ...}: {
+{
+  config,
+  ...
+}: {
   # Shell Aliase #
   environment = {
     shellAliases = {
