@@ -4,16 +4,17 @@
     shellAliases = {
       # Aliase
       etcnix = "cd / && cd /etc/nixos";
-      homet = "cd / && cd /home/torben";
-      "neubauen" = ''
+      homenix = "cd / && cd /home/torben/Dokumente/nixos";
+      "nixbauen" = ''
         etcnix ;\
         export ZTSTMPL="$(date '+%d-%m-%Y_%H-%M')" ;\
         export HNAME="$(hostname)" ;\
+        clear ;\
         echo " " ;\
-        echo "-+-*-+*M*+-*-+--> Dein NixOS wird gebaut (NixOS Luna v1.0x vom $ZTSTMPL) <--+-*-+*M*+-*-+-" &&\
+        echo "-------------> Dein NixOS wird gebaut (NixOS Luna v.1.0.x vom $ZTSTMPL) <-------------" &&\
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
         sudo rm -f result ;\
-        sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS Luna v1.0x vom $ZTSTMPL" '';
+        sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS Luna v.1.0.x vom $ZTSTMPL" '';
       "storecheck" = ''             
         etcnix ;\
         sudo nix-store --gc ;\
@@ -33,8 +34,7 @@
         sudo nix-collect-garbage --delete-older-than 1d ;\
         sudo nix-store --gc ;\
         sudo nix-store --optimise ;\
-        echo "-+-*-+*M*+-*-+--> Da alle Profile entfernt wurden wird ein neues erstellt <--+-*-+*M*+-*-+-" &&\
-        neubauen '';
+        nixbauen '';
       testbuild = "sudo nixos-rebuild dry-activate -v";
       ed = "sudo nano";
       termshark = "sudo termshark";
