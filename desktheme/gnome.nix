@@ -1,4 +1,4 @@
-# NixOS Luna v 1.07 Home Edition Alpha 22.09.2024
+# NixOS Luna v.1.0.7 Home Edition Alpha 28.09.2024
 {
   config,
   pkgs,
@@ -23,7 +23,13 @@
     systemPackages = with pkgs.gnomeExtensions; [
       #apps-menu
       #places-status-indicator
-      system-monitor
+      system-monitor = {
+        show-cpu = true;
+        #show-download = true; 
+        #show-memory = false;
+        #show-swap = false;
+        #show-upload = true;
+      };
       wifi-qrcode
     ];
     gnome.excludePackages =
@@ -64,13 +70,13 @@
       gnome-user-share.enable = lib.mkForce true;
       gnome-keyring.enable = lib.mkForce true;
     };
-    udisks2.enable = lib.mkForce true;
-    devmon.enable = lib.mkForce true;
+    #udisks2.enable = lib.mkForce true;
+    #devmon.enable = lib.mkForce true;
     xserver = {
       displayManager.gdm = {
         enable = true;
         autoSuspend = true;
-        banner = ''Luna v1.07 Home Edition (NixOS 24.05 gnome Desktop)'';
+        banner = ''Luna v.1.0.7 Home Edition (NixOS 24.05 gnome Desktop)'';
       };
       desktopManager = {
         gnome = {
