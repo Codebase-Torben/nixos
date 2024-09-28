@@ -52,6 +52,7 @@
 
   # NIXPKGS
   nixpkgs = {
+    #hostPlatform = lib.mkDefault "aarch64-linux"; Apple Silicon
     hostPlatform = lib.mkDefault "x86_64-linux";
     config = {
       allowBroken = lib.mkDefault false; # normal was true
