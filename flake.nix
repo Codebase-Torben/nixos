@@ -1,4 +1,3 @@
-# flake.nix
 {
   description = "nixos generic flake";
   inputs = {
