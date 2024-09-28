@@ -23,13 +23,12 @@
     systemPackages = with pkgs.gnomeExtensions; [
       #apps-menu
       #places-status-indicator
-      system-monitor = {
-        show-cpu = true;
+      system-monitor
+        #show-cpu = true;
         #show-download = true; 
         #show-memory = false;
         #show-swap = false;
         #show-upload = true;
-      };
       wifi-qrcode
     ];
     gnome.excludePackages =
