@@ -25,7 +25,7 @@
     nixosConfigurations = {
       # NixOS
       nixbook = nixpkgs.lib.nixosSystem {
-        #system = "aarch64-linux";
+        #system = "aarch64-linux"; Apple Silicon
         system = "x86_64-linux";
         modules = [
           home-manager.nixosModules.home-manager
