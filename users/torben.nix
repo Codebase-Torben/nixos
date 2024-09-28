@@ -1,4 +1,3 @@
-# Konfiguration des Userhome mit home-manger
 {
   config,
   pkgs,
