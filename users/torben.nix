@@ -93,9 +93,10 @@
             history = 50000;
           };
           font.size = 12;
+          background_opacity = 0.9;
           cursor.style = {
-            shape = Underline;
-            blinking = On;
+            shape = underline;
+            blinking = true;
           };
           colors.primary = {
             background = "##2b2d2f";
