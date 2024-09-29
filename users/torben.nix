@@ -75,12 +75,12 @@
       btop.enable = true;
       direnv.enable = true;
       fzf.enable = true;
-      thefuck.enable = true;
+      #thefuck.enable = true;
       starship.enable = true;
-      gh-dash.enable = true;
+      #gh-dash.enable = true;
       git.enable = true;
-      gitui.enable = true;
-      lazygit.enable = true;
+      #gitui.enable = true;
+      #lazygit.enable = true;
       home-manager.enable = true;
       librewolf.enable = true;
       alacritty = {
@@ -93,31 +93,13 @@
             history = 50000;
           };
           font.size = 12;
-
-cursor:
-# Cursor style
-#style:
-# Cursor shape
-#
-# Values for `shape`:
-#   - ▇ Block
-#   - _ Underline
-#   - | Beam
-#shape: Block
-
-# Cursor blinking state
-#
-# Values for `blinking`:
-#   - Never: Prevent the cursor from ever blinking
-#   - Off: Disable blinking by default
-#   - On: Enable blinking by default
-#   - Always: Force the cursor to always blink
-#blinking: Off
-
-
+          cursor.style = {
+            shape = Underline;
+            blinking = On;
+          };
           colors.primary = {
-            background = "#222234";
-            foreground = "#fffbf6";
+            background = "##2b2d2f";
+            foreground = "##ebeff3";
           };
           colors.normal = {
             black = "#2e2e2e";
