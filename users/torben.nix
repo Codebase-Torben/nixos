@@ -93,6 +93,28 @@
             history = 50000;
           };
           font.size = 12;
+
+cursor:
+# Cursor style
+#style:
+# Cursor shape
+#
+# Values for `shape`:
+#   - ▇ Block
+#   - _ Underline
+#   - | Beam
+#shape: Block
+
+# Cursor blinking state
+#
+# Values for `blinking`:
+#   - Never: Prevent the cursor from ever blinking
+#   - Off: Disable blinking by default
+#   - On: Enable blinking by default
+#   - Always: Force the cursor to always blink
+#blinking: Off
+
+
           colors.primary = {
             background = "#222234";
             foreground = "#fffbf6";
@@ -173,8 +195,10 @@
             wireless-hid.extensionUuid
             wifi-qrcode.extensionUuid
           ];
+          # Dock Favoriten
           favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "code.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop" "org.gnome.Settings.desktop"];
         };
+        # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
           custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"];
         };
@@ -193,8 +217,14 @@
           command = "nautilus";
           binding = "LaunchB";
         };
+        # Wochentag anzeigen
         "org/gnome/desktop/interface" = {
           clock-show-weekday = true;
+        };
+        # Hintergrundbild definieren (muss vorhanden sein oder git)
+        "org/gnome/desktop/background" = {
+          picture-uri = "file:///home/torben/Bilder/Hintergrundbilder/Luna_day.png";
+          picture-uri-dark = "file:///home/torben/Bilder/Hintergrundbilder/Luna_night.png";
         };
       };
     };
