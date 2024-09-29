@@ -75,7 +75,7 @@
       displayManager.gdm = {
         enable = true;
         autoSuspend = true;
-        banner = ''Luna v.1.0.7 Home Edition (NixOS 24.05 gnome Desktop)'';
+        banner = ''Luna v.1.0.7 Home Edition (NixOS 24.05)'';
       };
       desktopManager = {
         gnome = {
