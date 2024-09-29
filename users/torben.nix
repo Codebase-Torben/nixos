@@ -93,14 +93,13 @@
             history = 50000;
           };
           font.size = 12;
-          background_opacity = 0.9;
           cursor.style = {
             shape = "Underline";
             blinking = "On";
           };
           colors.primary = {
-            background = "##2b2d2f";
-            foreground = "##ebeff3";
+            background = "#2b2d2f";
+            foreground = "#ebeff3";
           };
           colors.normal = {
             black = "#2e2e2e";
@@ -125,6 +124,7 @@
           window = {
             decorations = "none";
             startup_mode = "Fullscreen";
+            opacity = 0.8;
           };
         };
       };
