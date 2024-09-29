@@ -95,8 +95,8 @@
           font.size = 12;
           background_opacity = 0.9;
           cursor.style = {
-            shape = underline;
-            blinking = true;
+            shape = "Underline";
+            blinking = "On";
           };
           colors.primary = {
             background = "##2b2d2f";
