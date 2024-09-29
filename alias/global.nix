@@ -8,6 +8,15 @@
       # Aliase
       etcnix = "cd / && cd /etc/nixos";
       homenix = "cd / && cd /home/torben/Dokumente/nixos";
+      "testbuild" = ''
+        etcnix ;\
+        export HNAME="$(hostname)" ;\
+        clear ;\
+        echo " " ;\
+        echo "-------------> Es wird ein Build versucht.... Bitte warten... <-------------" &&\
+        sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
+        sudo rm -f result ;\
+        sudo nixos-rebuild dry-activate --flake "/etc/nixos/.#$HNAME" '';
       "nixbauen" = ''
         etcnix ;\
         export ZTSTMPL="$(date '+%d-%m-%Y_%H-%M')" ;\
@@ -38,7 +47,6 @@
         sudo nix-store --gc ;\
         sudo nix-store --optimise ;\
         nixbauen '';
-      testbuild = "sudo nixos-rebuild dry-activate -v";
       ed = "sudo nano";
       termshark = "sudo termshark";
       l = "ls -la";
