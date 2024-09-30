@@ -91,11 +91,11 @@
         "xhci_pci"
       ];
     };
-    #tmp = {
-      #cleanOnBoot = true;
-      #useTmpfs = true;
-      #tmpfsSize = "85%";
-    #};
+    tmp = {
+      cleanOnBoot = true;
+      useTmpfs = true;
+      tmpfsSize = "85%";
+    };
     loader = {
       efi = {
         canTouchEfiVariables = false;
@@ -155,11 +155,11 @@
     earlySetup = lib.mkForce true;
     keyMap = "de";
   };
-  #swapDevices = [];
-  #zramSwap = {
-    #enable = true;
-    #algorithm = "zstd";
-  #};
+  swapDevices = [];
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+  };
 
   # systemd
   systemd = {
@@ -306,14 +306,14 @@
   # Dienste
   services = {
     thermald.enable = true;
-    #power-profiles-daemon.enable = true;
-    #logind.hibernateKey = "ignore";
-    #opensnitch = {
-      #enable = false;
-      #settings = {
-        #firewall = "nftables";
-        #defaultAction = "deny";
-      #};
-    #};
+    power-profiles-daemon.enable = true;
+    logind.hibernateKey = "ignore";
+    opensnitch = {
+      enable = false;
+      settings = {
+        firewall = "nftables";
+        defaultAction = "deny";
+      };
+    };
   };
 }
