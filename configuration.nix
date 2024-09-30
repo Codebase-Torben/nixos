@@ -116,19 +116,19 @@
   system = {
     stateVersion = "24.05"; # NixOS install Version
     switch.enable = true;
-    autoUpgrade = {
-      enable = false;
-      allowReboot = true;
-      dates = "daily";
-      flags = ["--update-input" "nixpkgs" "--update-input" "nixpkgs-Release" "--update-input" "home-manager" "--commit-lock-file"];
-      operation = "switch"; # switch or boot
-      persistent = true;
-      randomizedDelaySec = "15min";
-      rebootWindow = {
-        lower = "02:00";
-        upper = "04:00";
-      };
-    };
+    #autoUpgrade = {
+      #enable = false;
+      #allowReboot = true;
+      #dates = "daily";
+      #flags = ["--update-input" "nixpkgs" "--update-input" "nixpkgs-Release" "--update-input" "home-manager" "--commit-lock-file"];
+      #operation = "switch"; # switch or boot
+      #persistent = true;
+      #randomizedDelaySec = "15min";
+      #rebootWindow = {
+        #lower = "02:00";
+        #upper = "04:00";
+      #};
+    #};
   };
   time = {
     timeZone = "Europe/Berlin";
@@ -213,7 +213,7 @@
     firewall = {
       enable = true;
       allowPing = false;
-      allowedTCPPorts = [80 443];
+      allowedTCPPorts = [];
       allowedUDPPorts = [];
       checkReversePath = true;
     };
