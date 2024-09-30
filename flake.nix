@@ -3,6 +3,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-Release.url = "github:NixOS/nixpkgs/nixos-24.05";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,10 +16,9 @@
       inputs.nixpkgs.follows = "nixpkgs-Release";
     };
   };
-
-  # ...
   outputs = {
     self,
+    disko,
     nixpkgs,
     nixpkgs-Release,
     home-manager,
@@ -36,7 +39,11 @@
           #./users/resources/torben/git.nix
           #./modules/office.nix
           ./modules/timeserver.nix
-          {networking.hostName = "nixbook";}
+          {
+            networking = {
+              hostName = "nixbook";
+            };
+          }
         ];
       };
     };
