@@ -3,10 +3,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-Release.url = "github:NixOS/nixpkgs/nixos-24.05";
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Disko Declarative Pratitionierung
+    #disko = {
+      #url = "github:nix-community/disko";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    #};
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +19,7 @@
   };
   outputs = {
     self,
-    disko,
+    #disko,
     nixpkgs,
     nixpkgs-Release,
     home-manager,
