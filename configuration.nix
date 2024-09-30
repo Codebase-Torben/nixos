@@ -78,18 +78,11 @@
     blacklistedKernelModules = ["ax25" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "sysv"];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = ["page_alloc.shuffle=1" "ipv6.disable=1"];
-    kernelModules = ["acpi_call" "kvm-intel" "vfat" "exfat" "ext4"];
+    kernelModules = ["vfat" "exfat"];
     readOnlyNixStore = lib.mkForce true;
     initrd = {
       systemd.enable = lib.mkForce false;
-      availableKernelModules = [
-        "ahci"
-        "dm_mod"
-        "sd_mod"
-        "uas"
-        "usb_storage"
-        "xhci_pci"
-      ];
+      availableKernelModules = ["ahci" "dm_mod" "sd_mod" "sr_mod" "nvme" "mmc_block" "uas" "usbhid" "usb_storage" "xhci_pci"];
     };
     tmp = {
       cleanOnBoot = true;
@@ -111,10 +104,6 @@
       "kernel.kptr_restrict" = lib.mkForce 2;
       "kernel.ftrace_enabled" = lib.mkForce false;
       "net.core.bpf_jit_enable" = lib.mkForce false;
-      "net.ipv4.conf.all.log_martians" = lib.mkForce true;
-      "net.ipv4.conf.all.rp_filter" = lib.mkForce "1";
-      "net.ipv4.conf.default.log_martians" = lib.mkForce true;
-      "net.ipv4.conf.default.rp_filter" = lib.mkForce "1";
       "net.ipv4.icmp_echo_ignore_broadcasts" = lib.mkForce true;
       "net.ipv4.conf.all.accept_redirects" = lib.mkForce false;
       "net.ipv4.conf.all.secure_redirects" = lib.mkForce false;
@@ -123,7 +112,6 @@
       "net.ipv6.conf.all.accept_redirects" = lib.mkForce false;
     };
   };
-
   # System
   system = {
     stateVersion = "24.05"; # NixOS install Version
