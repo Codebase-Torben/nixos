@@ -21,38 +21,29 @@
   };
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [
-      #apps-menu
-      #places-status-indicator
       system-monitor
         #show-cpu = true;
         #show-download = true; 
         #show-memory = false;
         #show-swap = false;
         #show-upload = true;
+      battery-health-charging
       wifi-qrcode
+      ];
+      gnome.excludePackages = with pkgs; [
+      gnome-contacts
+      gnome-photos
+      gnome-tour
+      atomix
+      cheese
+      epiphany
+      iagno
+      totem
+      gedit
+      evince
+      hitori
+      tali
     ];
-    gnome.excludePackages =
-      (with pkgs; [
-        gnome-tour
-        #gnome-calendar
-        #gnome-terminal
-        totem
-        #geary
-        cheese
-        gnome-photos
-        gedit
-        evince
-        epiphany
-      ])
-      ++ (with pkgs.gnome; [
-        #gnome-music
-        #gnome-contacts
-        #gnome-characters
-        tali
-        iagno
-        hitori
-        atomix
-      ]);
   };
 
   # Dienste
@@ -69,8 +60,8 @@
       gnome-user-share.enable = lib.mkForce true;
       gnome-keyring.enable = lib.mkForce true;
     };
-    #udisks2.enable = lib.mkForce true;
-    #devmon.enable = lib.mkForce true;
+    udisks2.enable = lib.mkForce true;
+    devmon.enable = lib.mkForce true;
     xserver = {
       displayManager.gdm = {
         enable = true;
