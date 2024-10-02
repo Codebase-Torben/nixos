@@ -28,46 +28,42 @@
         VISUAL = "nano";
         SHELLCHECK_OPTS = "-e SC2086";
       };
-      file = {".config/starship.toml".source = ./resources/starship/colorconf.toml;};
+      file = {
+        ".config/starship.toml".source = ./resources/starship/colorconf.toml;
+        #"~/Bilder/Hintergrundbilder/Wallpaper_hell.png".source = .resources/user/torben/wallpaper_hell.png;
+        #"~/Bilder/Hintergrundbilder/Wallpaper_dunkel.png".source = .resources/user/torben/wallpaper_dunkel.png;
+      };
       packages = with pkgs; [
         audacity
-        #age #file encryption
         #bandwhich #Cli network utilization tool
+        #bitwarden-desktop
         bmon
         dnsutils
         dig
-        #bitwarden-desktop
-        #git-crypt
-        #git-agecrypt
-        #httpie
+        fd
         #hyperfine #Cli Benchmark
-        openssl
-        tldr #man based code examples :D
-        shellcheck
-        sysz
-        tailspin
+        kittysay
         kmon
         krita
-        kittysay
         moreutils
-        fd
         nix-tree
         nix-search-cli
         nix-output-monitor
-        #oha #Webserver tests
-        #remmina #i use gnome-connectons instead
-        tree
-        #trippy
-        termshark
-        tz #Timezone tool
-        portal #Data transport
+        openssl
+        portal #Datatransport tool
         rustscan #rust based nmap
-        ugm #Cli Usermanagement
-        #viddy
+        shellcheck
+        sysz
+        tailspin
+        termshark
+        tldr #man based code examples :D
+        tree
+        tz #Timezone tool
+        #ugm #Cli Usermanagement
         vulnix
         vlc
         vscodium
-        xh #Tool for sending HTTP requests
+        #xh #Tool for sending HTTP requests
       ];
     };
     fonts.fontconfig.enable = true;
