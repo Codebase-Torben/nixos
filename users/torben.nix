@@ -30,8 +30,8 @@
       };
       file = {
         ".config/starship.toml".source = ./resources/starship/colorconf.toml;
-        #"~/Bilder/Hintergrundbilder/Wallpaper_hell.png".source = .resources/user/torben/wallpaper_hell.png;
-        #"~/Bilder/Hintergrundbilder/Wallpaper_dunkel.png".source = .resources/user/torben/wallpaper_dunkel.png;
+        #"~/Bilder/Hintergrundbilder/Luna_day.png".source = .resources/user/torben/luna_hell.png;
+        #"~/Bilder/Hintergrundbilder/Luna_night.png".source = .resources/user/torben/luna_dunkel.png;
       };
       packages = with pkgs; [
         audacity
