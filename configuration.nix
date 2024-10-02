@@ -47,6 +47,16 @@
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
+      gc = {
+        automatic = true;
+        dates = "daily";
+        persistent = true;
+        options = "--delete-older-than 366d";
+      };
+      optimise = {
+        automatic = true;
+        dates = ["daily"];
+      };
     };
   };
 
@@ -55,7 +65,7 @@
     #hostPlatform = lib.mkDefault "aarch64-linux"; Apple Silicon
     hostPlatform = lib.mkDefault "x86_64-linux";
     config = {
-      allowBroken = lib.mkDefault false; # normal was true
+      allowBroken = lib.mkDefault true;
       allowUnfree = lib.mkDefault true;
     };
   };
@@ -293,15 +303,12 @@
 
   # Dienste
   services = {
-    thermald.enable = true;
     power-profiles-daemon.enable = true;
+    thermald.enable = true;
     logind.hibernateKey = "ignore";
-    opensnitch = {
-      enable = false;
-      settings = {
-        firewall = "nftables";
-        defaultAction = "deny";
-      };
+    fstrim = {
+      enable = true;
+      interval = "daily";
     };
   };
 }
