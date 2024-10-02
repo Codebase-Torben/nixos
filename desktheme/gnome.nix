@@ -20,22 +20,18 @@
     };
   };
   environment = {
-    systemPackages = with pkgs.gnomeExtensions; [
-      system-monitor
-        #show-cpu = true;
-        #show-download = true; 
-        #show-memory = false;
-        #show-swap = false;
-        #show-upload = true;
-      battery-health-charging
-      wifi-qrcode
-      ];
-      gnome.excludePackages = with pkgs; [
+    systemPackages = with pkgs.gnomeExtensions; [battery-health-charging wifi-qrcode];
+    gnome.excludePackages = with pkgs; [
+      #gnome-characters
+      gnome-calendar
       gnome-contacts
       gnome-photos
       gnome-tour
+      #gnome-terminal
+      #gnome-music
       atomix
       cheese
+      geary
       epiphany
       iagno
       totem
