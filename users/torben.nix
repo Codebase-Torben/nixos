@@ -202,8 +202,8 @@
         };
         # Hintergrundbild definieren (muss vorhanden sein oder git)
         "org/gnome/desktop/background" = {
-          picture-uri = "~/Bilder/Hintergrundbilder/Luna_day.png";
-          picture-uri-dark = "~/Bilder/Hintergrundbilder/Luna_night.png";
+          picture-uri = ".config/Luna_day.png";
+          picture-uri-dark = ".config/Luna_night.png";
         };
       };
     };
