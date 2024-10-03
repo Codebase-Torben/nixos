@@ -16,6 +16,16 @@
     enable = true;
     package = pkgs.nixFlakes;
     optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "daily";
+      persistent = true;
+      options = "--delete-older-than 366d";
+    };
+    optimise = {
+      automatic = true;
+      dates = ["daily"];
+    };
     extraOptions = ''
       builders-use-substitutes = false
       experimental-features = nix-command flakes'';
@@ -47,16 +57,6 @@
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
-      gc = {
-        automatic = true;
-        dates = "daily";
-        persistent = true;
-        options = "--delete-older-than 366d";
-      };
-      optimise = {
-        automatic = true;
-        dates = ["daily"];
-      };
     };
   };
 
