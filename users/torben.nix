@@ -30,8 +30,8 @@
       };
       file = {
         ".config/starship.toml".source = ./resources/starship/colorconf.toml;
-        #"~/Bilder/Hintergrundbilder/Luna_day.png" = .resources/user/torben/luna_hell.png;
-        #"~/Bilder/Hintergrundbilder/Luna_night.png" = .resources/user/torben/luna_dunkel.png;
+        ".config/Luna_day.png".source = ./resources/user/torben/luna_hell.png;
+        ".config/Luna_night.png".source = ./resources/user/torben/luna_dunkel.png;
       };
       packages = with pkgs; [
         audacity
@@ -129,7 +129,7 @@
         flags = ["--disable-up-arrow"];
       };
       bat = {
-      enable = false;
+      enable = true;
       #extraPackages = with pkgs.bat-extras; [batdiff batman batgrep batwatch prettybat];
       };
       eza = {
@@ -175,7 +175,7 @@
             wifi-qrcode.extensionUuid
           ];
           # Dock Favoriten
-          favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop" "org.gnome.Settings.desktop"];
+          favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
         };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
