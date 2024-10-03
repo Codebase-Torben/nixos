@@ -15,7 +15,6 @@
   nix = {
     enable = true;
     package = pkgs.nixFlakes;
-    optimise.automatic = true;
     gc = {
       automatic = true;
       dates = "daily";
