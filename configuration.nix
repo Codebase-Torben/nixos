@@ -121,6 +121,7 @@
       "net.ipv6.conf.all.accept_redirects" = lib.mkForce false;
     };
   };
+
   # System
   system = {
     stateVersion = "24.05"; # NixOS install Version
