@@ -30,8 +30,8 @@
       };
       file = {
         ".config/starship.toml".source = ./resources/starship/colorconf.toml;
-        ".config/Luna_day.png".source = ./resources/users/torben/luna_hell.png;
-        ".config/Luna_night.png".source = ./resources/users/torben/luna_dunkel.png;
+        ".config/Luna_day.png".source = ./resources/torben/luna_hell.png;
+        ".config/Luna_night.png".source = ./resources/torben/luna_dunkel.png;
       };
       packages = with pkgs; [
         audacity
