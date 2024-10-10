@@ -59,7 +59,10 @@
       b = "btop";
       h = "htop --tree --highlight-changes";
       time = "timedatectl && chronyc tracking && chronyc activity";
-      slog = "journalctl --follow --priority=7 --lines=2500";
+      "logbuch" = "journalctl --since='30 min ago' -u $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
+      "starter" = "sudo systemctl start $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
+      "stopper" = "sudo systemctl stop $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
+      "neustarter" = "sudo systemctl restart $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
     };
   };
 }
