@@ -19,9 +19,9 @@
         speed = {
           image = "openspeedtest/latest:latest";
           ports = ["0.0.0.0:8181:3000"];
-          environment = {
-            SET_SERVER_NAME = "speed.pvz.lan";
-          };
+          #environment = {
+            #SET_SERVER_NAME = "name.service.lan";
+          #};
         };
         yo = {
           image = "jhaals/yopass:latest";
