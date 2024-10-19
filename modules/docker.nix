@@ -19,26 +19,31 @@
         speed = {
           image = "openspeedtest/latest:latest";
           ports = ["0.0.0.0:7891:3000"];
+          autostart = true;
           #environment = {
-            #SET_SERVER_NAME = "name.service.lan";
+            #SET_SERVER_NAME = "speedtest.pinasse.home";
           #};
         };
         yo = {
           image = "jhaals/yopass:latest";
           cmd = ["--address=0.0.0.0" "--port=7892" "--metrics-port=9144" "--database=memcached" "--memcached=localhost:11211"];
           extraOptions = ["--network=host"];
+          autostart = true;
         };
         status = {
           image = "adamboutcher/statping-ng:latest";
           ports = ["0.0.0.0:7893:4000"];
+          autostart = true;
         };
         chef = {
           image = "ghcr.io/gchq/cyberchef:latest";
           ports = ["0.0.0.0:7894:80"];
+          autostart = true;
         };
         whoogle = {
           image = "benbusby/whoogle-search:latest";
           ports = ["0.0.0.0:8080:8080"];
+          autostart = true;
           environment = {
             EXPOSE_PORT = "8080";
             WHOOGLE_MINIMAL = "1";
