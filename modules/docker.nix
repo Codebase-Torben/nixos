@@ -12,6 +12,14 @@
     };
   };
 
+  # Firewall
+  networking = {
+    firewall = {
+      allowedTCPPorts = [7891 7892 7893 7894 8080];
+      allowedUDPPorts = [7891 7892 7893 7894 8080];
+    };
+  };
+
   # Docker Container
   virtualisation = {
     oci-containers = {
