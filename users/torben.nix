@@ -19,7 +19,7 @@
   # home-manager
   home-manager.users.torben = {
     home = {
-      stateVersion = "24.05";
+      stateVersion = "24.11";
       username = "torben";
       homeDirectory = "/home/torben";
       keyboard.layout = "de";
