@@ -124,7 +124,7 @@
 
   # System
   system = {
-    stateVersion = "24.05"; # NixOS install Version
+    stateVersion = "24.11"; # NixOS install Version
     switch.enable = true;
     #autoUpgrade = {
       #enable = false;
