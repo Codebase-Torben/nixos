@@ -12,9 +12,9 @@
   ];
 
   # NixOS
-  nix = {
+nix = {
     enable = true;
-    package = pkgs.nixFlakes;
+    daemonCPUSchedPolicy = "idle";
     gc = {
       automatic = true;
       dates = "daily";
