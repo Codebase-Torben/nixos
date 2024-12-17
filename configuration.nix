@@ -171,14 +171,20 @@
 
   # Hardware
   hardware = {
+    acpilight.enable = true;
+    enableAllFirmware = lib.mkForce true;
+    #pulseaudio.enable = false;
     cpu = {
+      amd = {
+        updateMicrocode = true;
+        ryzen-smu.enable = true;
+        sev.enable = true;
+      };
       intel = {
-        updateMicrocode = lib.mkForce true;
-        sgx.provision.enable = lib.mkForce false;
+        updateMicrocode = true;
+        sgx.provision.enable = true;
       };
     };
-    enableRedistributableFirmware = lib.mkForce true;
-    pulseaudio.enable = false;
   };
 
   # Sicherheit
