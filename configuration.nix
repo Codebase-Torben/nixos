@@ -303,12 +303,45 @@ nix = {
 
   # Dienste
   services = {
-    power-profiles-daemon.enable = true;
-    thermald.enable = true;
+    fwupd.enable = true;
+    smartd.enable = true;
+    openssh.enable = false;
+    power-profiles-daemon.enable = lib.mkForce false;
     logind.hibernateKey = "ignore";
     fstrim = {
       enable = true;
       interval = "daily";
+    };
+    tlp = {
+      enable = true;
+      settings = {
+        USB_AUTOSUSPEND = "0"; # disable
+        START_CHARGE_THRESH_BAT0 = 40;
+        STOP_CHARGE_THRESH_BAT0 = 80;
+        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "balance_power";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+        RADEON_DPM_PERF_LEVEL_ON_AC = "low";
+        RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
+        RADEON_DPM_STATE_ON_AC = "battery";
+        RADEON_DPM_STATE_ON_BAT = "battery";
+        RADEON_POWER_PROFILE_ON_AC = "low";
+        RADEON_POWER_PROFILE_ON_BAT = "low";
+        PLATFORM_PROFILE_ON_AC = "low-power";
+        PLATFORM_PROFILE_ON_BAT = "low-power";
+      };
+    };
+    usbguard = {
+      enable = false;
+      rules = ''
+        allow with-interface one-of { 02:*:* 08:*:* 09:*:* 11:*:* }
+        reject with-interface all-of { 08:*:* 03:00:* }
+        reject with-interface all-of { 08:*:* 03:01:* }
+        reject with-interface all-of { 08:*:* e0:*:* }
+        reject with-interface all-of { 08:*:* 02:*:* }
+        allow with-interface one-of { 03:00:01 03:01:01 } if !allowed-matches(with-interface one-of { 03:00:01 03:01:01 })
+      '';
     };
   };
 }
