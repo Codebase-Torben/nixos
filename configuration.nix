@@ -183,9 +183,9 @@ nix = {
 
   # Sicherheit
   security = {
-    auditd.enable = true;
+    auditd.enable = false;
     audit = {
-      enable = lib.mkForce true;
+      enable = lib.mkForce false;
       backlogLimit = 512;
       failureMode = "panic";
       rules = ["-a exit,always -F arch=b64 -S execve"];
@@ -196,10 +196,6 @@ nix = {
     apparmor = {
       enable = lib.mkForce true;
       killUnconfinedConfinables = lib.mkForce true;
-    };
-    doas = {
-      enable = false;
-      wheelNeedsPassword = lib.mkForce true;
     };
     sudo = {
       enable = false;
