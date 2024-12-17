@@ -12,7 +12,7 @@
   ];
 
   # NixOS
-nix = {
+  nix = {
     enable = true;
     daemonCPUSchedPolicy = "idle";
     gc = {
@@ -84,15 +84,16 @@ nix = {
 
   # Boot
   boot = {
-    blacklistedKernelModules = ["ax25" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "sysv"];
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = ["page_alloc.shuffle=1" "ipv6.disable=1"];
-    kernelModules = ["vfat" "exfat" "ext4"];
-    readOnlyNixStore = lib.mkForce true;
     initrd = {
       systemd.enable = lib.mkForce false;
-      availableKernelModules = ["ahci" "dm_mod" "sd_mod" "sr_mod" "nvme" "mmc_block" "uas" "usbhid" "usb_storage" "xhci_pci"];
+      availableKernelModules = ["applespi" "applesmc" "spi_pxa2xx_platform" "intel_lpss_pci" "ahci" "dm_mod" "sd_mod" "sr_mod" "nvme" "mmc_block" "uas" "usbhid" "usb_storage" "xhci_pci"];
     };
+    blacklistedKernelModules = ["b43" "bcma" "brcmfmac" "brcmsmac" "ssb" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp"];
+    extraModulePackages = [config.boot.kernelPackages.zenpower];
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = ["page_alloc.shuffle=1" "amd_pstate=active"];
+    kernelModules = ["vfat" "exfat" "uas" "kvm-intel" "kvm-amd" "amd-pstate"];
+    readOnlyNixStore = lib.mkForce true;
     tmp = {
       cleanOnBoot = true;
       useTmpfs = true;
@@ -112,7 +113,6 @@ nix = {
     kernel.sysctl = {
       "kernel.kptr_restrict" = lib.mkForce 2;
       "kernel.ftrace_enabled" = lib.mkForce false;
-      "net.core.bpf_jit_enable" = lib.mkForce false;
       "net.ipv4.icmp_echo_ignore_broadcasts" = lib.mkForce true;
       "net.ipv4.conf.all.accept_redirects" = lib.mkForce false;
       "net.ipv4.conf.all.secure_redirects" = lib.mkForce false;
