@@ -37,7 +37,7 @@
           ./desktheme/gnome.nix
           ./users/torben.nix
           #./users/resources/torben/firefox.nix
-          #./users/resources/torben/git.nix
+          ./users/resources/torben/git.nix
           ./modules/office.nix
           ./modules/docker.nix
           ./modules/timeserver.nix
