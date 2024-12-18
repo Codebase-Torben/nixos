@@ -36,9 +36,8 @@
       (with pkgs; [
         gnome-tour
         gnome-calendar
-        #gnome-terminal
+        gnome-contacts
         totem
-        #geary
         #cheese
         gnome-photos
         gedit
@@ -46,9 +45,6 @@
         epiphany
       ])
       ++ (with pkgs.gnome; [
-        #gnome-music
-        gnome-contacts
-        #gnome-characters
         tali
         iagno
         hitori
