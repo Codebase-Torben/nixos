@@ -12,16 +12,18 @@
         etcnix ;\
         export HNAME="$(hostname)" ;\
         clear ;\
+        sudo nix flake update
         echo " " ;\
         echo "-------------> Es wird ein Build versucht.... Bitte warten... <-------------" &&\
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
         sudo rm -f result ;\
         sudo nixos-rebuild dry-activate --flake "/etc/nixos/.#$HNAME" '';
-      "nixbauen" = ''
+      "neubauen" = ''
         etcnix ;\
         export ZTSTMPL="$(date '+%d-%m-%Y_%H-%M')" ;\
         export HNAME="$(hostname)" ;\
         clear ;\
+        sudo nix flake update
         echo " " ;\
         echo "-------------> Dein NixOS wird gebaut (NixOS Luna v.1.0.x vom $ZTSTMPL) <-------------" &&\
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
@@ -31,7 +33,7 @@
         etcnix ;\
         sudo nix-store --gc ;\
         sudo nix-store --verify --check-contents --repair '';
-      "clean6" = ''
+      "cleanix" = ''
         etcnix ;\
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 6d ;\
         sudo nix-collect-garbage --delete-older-than 6d ;\
@@ -60,7 +62,7 @@
       h = "htop --tree --highlight-changes";
       time = "timedatectl && chronyc tracking && chronyc activity";
       "logbuch" = "journalctl --since='30 min ago' -u $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
-      "starter" = "sudo systemctl start $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
+      "starter" = "sudo systemctl start $(systemctl list-units --type=service --all | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
       "stopper" = "sudo systemctl stop $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
       "neustarter" = "sudo systemctl restart $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
     };
