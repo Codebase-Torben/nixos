@@ -19,7 +19,7 @@
         server ntp.trifence.ch iburst nts
         server ntp.zeitgitter.net iburst nts
         server paris.time.system76.com iburst nts
-        minsources 4
+        minsources 3
         authselectmode require
         dscp 46
         driftfile /var/lib/chrony/drift
