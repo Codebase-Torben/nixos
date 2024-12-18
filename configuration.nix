@@ -173,7 +173,7 @@
   hardware = {
     acpilight.enable = true;
     enableAllFirmware = lib.mkForce true;
-    #pulseaudio.enable = false;
+    pulseaudio.enable = false;
     cpu = {
       amd = {
         updateMicrocode = true;
