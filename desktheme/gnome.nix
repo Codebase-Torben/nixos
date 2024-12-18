@@ -35,8 +35,8 @@
     gnome.excludePackages =
       (with pkgs; [
         gnome-tour
-        gnome-calendar
-        gnome-contacts
+        #gnome-calendar
+        #gnome-contacts
         totem
         #cheese
         gnome-photos
@@ -71,7 +71,7 @@
       displayManager.gdm = {
         enable = true;
         autoSuspend = true;
-        banner = ''Luna v.1.0.7 Home Edition (NixOS 24.05)'';
+        banner = ''Luna v.1.0.7 Home Edition (NixOS 24.11)'';
       };
       desktopManager = {
         gnome = {
