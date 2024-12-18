@@ -30,8 +30,8 @@
       };
       file = {
         ".config/starship.toml".source = ./resources/starship/colorconf.toml;
-        ".config/Luna_day.png".source = ./resources/torben/luna_hell.png;
-        ".config/Luna_night.png".source = ./resources/torben/luna_dunkel.png;
+        "Bilder/Luna_day.png".source = ./resources/torben/luna_hell.png;
+        "Bilder/Luna_night.png".source = ./resources/torben/luna_dunkel.png;
       };
       packages = with pkgs; [
         audacity
@@ -73,9 +73,9 @@
       fzf.enable = true;
       #thefuck.enable = true;
       starship.enable = true;
-      #gh-dash.enable = true;
+      gh-dash.enable = true;
       git.enable = true;
-      #gitui.enable = true;
+      gitui.enable = true;
       #lazygit.enable = true;
       home-manager.enable = true;
       librewolf.enable = true;
@@ -135,7 +135,7 @@
       eza = {
         enable = true;
         git = true;
-        icons = "auto";
+        #icons = "auto";
         extraOptions = ["--group-directories-first" "--header"];
       };
       fd = {
@@ -202,8 +202,8 @@
         };
         # Hintergrundbild definieren (muss vorhanden sein oder git)
         "org/gnome/desktop/background" = {
-          picture-uri = ".config/Luna_day.png";
-          picture-uri-dark = ".config/Luna_night.png";
+          picture-uri = "Bilder/Luna_day.png";
+          picture-uri-dark = "Bilder/Luna_night.png";
         };
       };
     };
