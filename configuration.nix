@@ -281,6 +281,35 @@
         };
       };
     };
+    git = {
+      enable = true;
+      prompt.enable = true;
+      config = {
+        branch.sort = "-committerdate";
+        commit.gpgsign = false;
+        init.defaultBranch = "main";
+        safe.directory = "/etc/nixos";
+        gpg.format = "ssh";
+        user = {
+          email = "torben@nixbook";
+          name = "Git Signing";
+          signingkey = "home/torben/.ssh/schluessel4git.pub";
+        };
+        http = {
+          sslVerify = "true";
+          sslVersion = "tlsv1.3";
+          version = "HTTP/1.1";
+        };
+        protocol = {
+          allow = "never";
+          file.allow = "always";
+          git.allow = "never";
+          ssh.allow = "always";
+          http.allow = "never";
+          https.allow = "always";
+        };
+      };
+    };
   };
 
   # env
