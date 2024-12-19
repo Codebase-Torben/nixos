@@ -88,7 +88,7 @@
       systemd.enable = lib.mkForce false;
       availableKernelModules = ["ahci" "dm_mod" "sd_mod" "sr_mod" "nvme" "mmc_block" "uas" "usbhid" "usb_storage" "xhci_pci"];
     };
-    blacklistedKernelModules = ["b43" "bcma" "brcmfmac" "brcmsmac" "ssb" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp"];
+    blacklistedKernelModules = ["b43" "bcma" "brcmsmac" "ssb" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp"]; #"brcmfmac" WiFi old macbook
     #extraModulePackages = [config.boot.kernelPackages.zenpower];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = ["page_alloc.shuffle=1"]; #"amd_pstate=active"
@@ -174,17 +174,17 @@
     acpilight.enable = true;
     enableAllFirmware = lib.mkForce true;
     pulseaudio.enable = false;
-    #cpu = {
+    cpu = {
       #amd = {
         #updateMicrocode = true;
         #ryzen-smu.enable = true;
         #sev.enable = true;
       #};
-      #intel = {
-        #updateMicrocode = true;
-        #sgx.provision.enable = true;
-      #};
-    #};
+      intel = {
+        updateMicrocode = true;
+        sgx.provision.enable = true;
+      };
+    };
   };
 
   # Sicherheit
