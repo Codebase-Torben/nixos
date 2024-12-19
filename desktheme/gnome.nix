@@ -41,6 +41,7 @@
       evince
       epiphany
     ])
+  };
 
   # Dienste
   services = {
