@@ -187,6 +187,7 @@
     };
   };
 
+  # Sicherheit
   security = {
     # lockKernelModules = lib.mkForce true;
     auditd.enable = false;
