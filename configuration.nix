@@ -187,26 +187,25 @@
     };
   };
 
-  # Sicherheit
   security = {
+    # lockKernelModules = lib.mkForce true;
     auditd.enable = false;
+    allowSimultaneousMultithreading = true;
+    protectKernelImage = lib.mkForce true;
     audit = {
       enable = lib.mkForce false;
       backlogLimit = 512;
       failureMode = "panic";
       rules = ["-a exit,always -F arch=b64 -S execve"];
     };
-    allowSimultaneousMultithreading = true;
-    lockKernelModules = lib.mkForce false; # set true for Kernel hardening
-    protectKernelImage = lib.mkForce true;
     apparmor = {
       enable = lib.mkForce true;
       killUnconfinedConfinables = lib.mkForce true;
     };
-    sudo = {
-      enable = false;
-      execWheelOnly = lib.mkForce true;
-      wheelNeedsPassword = lib.mkForce true;
+    dhparams = {
+      enable = true;
+      stateful = false;
+      defaultBitSize = "3072";
     };
     sudo-rs = {
       enable = true;
