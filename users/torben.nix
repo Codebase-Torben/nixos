@@ -153,7 +153,7 @@
       eza = {
         enable = true;
         git = true;
-        #icons = "auto";
+        icons = "auto";
         extraOptions = ["--group-directories-first" "--header"];
       };
       fd = {
