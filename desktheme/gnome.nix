@@ -35,21 +35,13 @@
     gnome.excludePackages =
       (with pkgs; [
         gnome-tour
-        #gnome-calendar
-        #gnome-contacts
         totem
-        #cheese
+        cheese
         gnome-photos
         gedit
         evince
         epiphany
       ])
-      ++ (with pkgs.gnome; [
-        tali
-        iagno
-        hitori
-        atomix
-      ]);
   };
 
   # Dienste
