@@ -35,8 +35,8 @@
         sudo nix-store --verify --check-contents --repair '';
       "updater" = ''             
         etcnix ;\
-        sudo nix-store --verify --check-contents --repair '';\
-        sudo nix flake update ;
+        sudo nix-store --verify --check-contents --repair ;\
+        sudo nix flake update '';
       "cleanix" = ''
         etcnix ;\
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 6d ;\
