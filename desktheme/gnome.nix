@@ -19,6 +19,8 @@
       profiles.gdm.databases = [{settings."org/gnome/settings-daemon/plugins/power" = {power-button-action = "suspend";};}];
     };
   };
+
+  # Env
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [
       #apps-menu
@@ -40,7 +42,7 @@
       gedit
       evince
       epiphany
-    ])
+    ]);
   };
 
   # Dienste
