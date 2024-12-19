@@ -1,4 +1,4 @@
-# NixOS Luna v.1.0.7 Home Edition Alpha 02.10.2024
+# NixOS Luna v.1.0.7 Home Edition Alpha 19.12.2024
 {
   config,
   pkgs,
