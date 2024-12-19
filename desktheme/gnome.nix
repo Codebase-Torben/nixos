@@ -40,8 +40,7 @@
       gedit
       evince
       epiphany
-    ];)
-  };
+    ])
 
   # Dienste
   services = {
