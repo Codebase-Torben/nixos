@@ -20,7 +20,7 @@
         modules = [
           home-manager.nixosModules.home-manager
           ./configuration.nix
-          #./hardware/macbook.nix
+          ./hardware/macbook.nix
           ./desktheme/gnome.nix
           ./users/torben.nix
           #./users/resources/torben/firefox.nix
