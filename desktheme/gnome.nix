@@ -32,16 +32,15 @@
       battery-health-charging
       wifi-qrcode
     ];
-    gnome.excludePackages =
-      (with pkgs; [
-        gnome-tour
-        totem
-        cheese
-        gnome-photos
-        gedit
-        evince
-        epiphany
-      ])
+    gnome.excludePackages = (with pkgs; [
+      gnome-tour
+      totem
+      cheese
+      gnome-photos
+      gedit
+      evince
+      epiphany
+    ];)
   };
 
   # Dienste
