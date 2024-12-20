@@ -12,9 +12,9 @@
         etcnix ;\
         export HNAME="$(hostname)" ;\
         clear ;\
-        sudo nix flake update ;\
+        sudo nix flake update -v ;\
         echo " " ;\
-        echo "-------------> Es wird ein Build versucht.... Bitte warten... <-------------" &&\
+        echo "-------------> Es wird ein Build versucht... Bitte warten... <-------------" &&\
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
         sudo rm -f result ;\
         sudo nixos-rebuild dry-activate --flake "/etc/nixos/.#$HNAME" '';
@@ -23,7 +23,7 @@
         export ZTSTMPL="$(date '+%d-%m-%Y-%H-%M')" ;\
         export HNAME="$(hostname)" ;\
         clear ;\
-        sudo nix flake update ;\
+        sudo nix flake update -v ;\
         echo " " ;\
         echo "-------------> Dein NixOS Luna wird gebaut ($ZTSTMPL) <-------------" &&\
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
@@ -31,9 +31,10 @@
         sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS-Luna-vom-$ZTSTMPL" '';
       "storeupdate" = ''             
         etcnix ;\
-        sudo nix-store --gc ;\
-        sudo nix-store --verify --check-contents --repair ;\
-        sudo nix flake update '';
+        sudo nix-store -v --gc ;\
+        sudo nix-store -v --verify --check-contents --repair ;\
+        sudo nix flake check -v ;\
+        sudo nix flake update -v '';
       "cleanix" = ''
         etcnix ;\
         sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system 6d ;\
