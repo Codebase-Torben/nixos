@@ -35,36 +35,110 @@
         "Bilder/Luna_night.png".source = ./resources/torben/luna_dunkel.png;
       };
       packages = with pkgs; [
-        audacity
-        #bandwhich #Cli network utilization tool
-        #bitwarden-desktop
+        asn
+        age
+        bandwhich
         bmon
+        binsider
+        certgraph
+        caligula
+        curlie
+        compose2nix
+        cifs-utils
+        ddgr
+        docker
+        docker-compose
+        dust
+        dmidecode
+        dnstracer
         dnsutils
-        dig
-        fd
-        #hyperfine #Cli Benchmark
-        kittysay
+        fastfetch
+        ffsend
+        filezilla
+        goaccess
+        gobang
+        gopass
+        git-crypt
+        git-agecrypt
+        gping
+        graphviz
+        httpie
+        hyperfine
+        inetutils
+        shellcheck
+        shfmt
+        s-tui
+        stress
+        socialscan
+        sysz
+        tea
+        tcping-go
+        tldr
+        tlsinfo
+        termdbms
+        termshark
+        tshark
+        tig
+        tree
+        trippy
+        tz
+        openssl
+        progress
+        pv
         kmon
-        krita
+        keepassxc
+        keepassxc-go
         moreutils
+        nodejs
+        netscanner
+        ncftp
+        nix-du
         nix-tree
+        nix-top
+        nix-init
         nix-search-cli
         nix-output-monitor
+        nixpkgs-review
+        nix-prefetch-scripts
+        nixfmt-rfc-style
+        nixpkgs-fmt
+        nvme-cli
+        nodejs
+        fastfetch
+        fd
+        jq
+        oha
         openssl
-        portal #Datatransport tool
-        rustscan #rust based nmap
-        shellcheck
-        sysz
-        tailspin
-        termshark
-        tldr #man based code examples :D
-        tree
-        tz #Timezone tool
-        #ugm #Cli Usermanagement
+        paper-age
+        passage
+        podman
+        podman-compose
+        podman-tui
+        pciutils
+        portal
+        pwgen
+        rage
+        rsync
+        ssh-audit
+        undervolt
+        usbutils
+        ugm
+        webanalyze
         vulnix
+        xh
+        yamlfmt
+        yarn
+        yq
+        zgrviewer
+        #home
+        audacity
+        #bitwarden-desktop
+        bmon
+        dig
+        kittysay
+        krita
         vlc
         vscodium
-        #xh #Tool for sending HTTP requests
       ];
     };
     fonts.fontconfig.enable = true;
