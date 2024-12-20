@@ -205,7 +205,7 @@
       };
       bat = {
       enable = true;
-      #extraPackages = with pkgs.bat-extras; [batdiff batman batgrep batwatch prettybat];
+      extraPackages = with pkgs.bat-extras; [batman batgrep batwatch];
       };
       git = {
         userName = lib.mkForce "Git Signing";
