@@ -293,7 +293,7 @@
         user = {
           email = "torben@nixbook";
           name = "Git Signing";
-          signingkey = "home/torben/.ssh/schluessel4git.pub";
+          signingkey = "/home/torben/.ssh/schluessel4git.pub";
         };
         http = {
           sslVerify = "true";
