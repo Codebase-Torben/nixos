@@ -20,21 +20,18 @@
         sudo nixos-rebuild dry-activate --flake "/etc/nixos/.#$HNAME" '';
       "neubauen" = ''
         etcnix ;\
-        export ZTSTMPL="$(date '+%d-%m-%Y_%H-%M')" ;\
+        export ZTSTMPL="$(date '+%d-%m-%Y-%H-%M')" ;\
         export HNAME="$(hostname)" ;\
         clear ;\
         sudo nix flake update ;\
         echo " " ;\
-        echo "-------------> Dein NixOS wird gebaut (NixOS Luna v.1.0.x vom $ZTSTMPL) <-------------" &&\
+        echo "-------------> Dein NixOS Luna wird gebaut ($ZTSTMPL) <-------------" &&\
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
         sudo rm -f result ;\
-        sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS-Luna-v.1.0.x_vom_$ZTSTMPL" '';
-      "storecheck" = ''             
+        sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS-Luna-vom-$ZTSTMPL" '';
+      "storeupdate" = ''             
         etcnix ;\
         sudo nix-store --gc ;\
-        sudo nix-store --verify --check-contents --repair '';
-      "updater" = ''             
-        etcnix ;\
         sudo nix-store --verify --check-contents --repair ;\
         sudo nix flake update '';
       "cleanix" = ''
@@ -52,7 +49,7 @@
         sudo nix-collect-garbage --delete-older-than 1d ;\
         sudo nix-store --gc ;\
         sudo nix-store --optimise ;\
-        nixbauen '';
+        neubauen '';
       ed = "sudo nano";
       termshark = "sudo termshark";
       l = "ls -la";
