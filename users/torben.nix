@@ -20,6 +20,7 @@
   home-manager.users.torben = {
     home = {
       stateVersion = "24.11";
+      enableNixpkgsReleaseCheck = false;
       username = "torben";
       homeDirectory = "/home/torben";
       keyboard.layout = "de";
