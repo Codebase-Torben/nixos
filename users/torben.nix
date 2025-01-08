@@ -137,6 +137,7 @@
         dig
         kittysay
         krita
+        ventoy-full
         vlc
         vscodium
       ];
