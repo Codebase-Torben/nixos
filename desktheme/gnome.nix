@@ -23,11 +23,11 @@
   # Env
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [
-      #apps-menu
-      #app-menu
-      #places-status-indicator
-      #places-status-menu
+      applications-menu
+      burn-my-windows
+      places-status-indicator
       system-monitor
+      runcat
       wireguard-vpn-extension
       wireless-hid
       wifi-qrcode
