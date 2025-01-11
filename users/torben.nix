@@ -128,12 +128,12 @@
         xh
         yamlfmt
         yarn
+        ykman
         yq
         zgrviewer
         #home
         audacity
         #bitwarden-desktop
-        bmon
         dig
         kittysay
         krita
@@ -259,11 +259,14 @@
         "org/gnome/shell" = {
           disable-user-extensions = false;
           enabled-extensions = with pkgs.gnomeExtensions; [
-            applications-menu.extensionUuid
+            #applications-menu.extensionUuid
             burn-my-windows.extensionUuid
-            places-status-indicator.extensionUuid
+            dejaview.extensionUuid
+            #places-status-indicator.extensionUuid
+            quake-terminal.extensionUuid
             runcat.extensionUuid
             system-monitor.extensionUuid
+            transparent-top-bar-adjustable-transparency.extensionUuid
             wifi-qrcode.extensionUuid
             #wireguard-vpn-extension.extensionUuid
             #wireless-hid.extensionUuid
