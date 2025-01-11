@@ -259,14 +259,14 @@
         "org/gnome/shell" = {
           disable-user-extensions = false;
           enabled-extensions = with pkgs.gnomeExtensions; [
-            #app-menu.extensionUuid
-            #places-status-menu.extensionUuid
+            applications-menu.extensionUuid
+            burn-my-windows.extensionUuid
+            places-status-indicator.extensionUuid
+            runcat.extensionUuid
             system-monitor.extensionUuid
-            todotxt.extensionUuid
-            #toggle-alacritty.extensionUuid
-            wireguard-vpn-extension.extensionUuid
-            wireless-hid.extensionUuid
             wifi-qrcode.extensionUuid
+            #wireguard-vpn-extension.extensionUuid
+            #wireless-hid.extensionUuid
           ];
           # Dock Favoriten
           favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
