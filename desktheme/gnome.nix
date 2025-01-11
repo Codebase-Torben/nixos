@@ -24,14 +24,12 @@
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [
       #apps-menu
+      #app-menu
       #places-status-indicator
+      #places-status-menu
       system-monitor
-        #show-cpu = true;
-        #show-download = true; 
-        #show-memory = false;
-        #show-swap = false;
-        #show-upload = true;
-      battery-health-charging
+      wireguard-vpn-extension
+      wireless-hid
       wifi-qrcode
     ];
     gnome.excludePackages = (with pkgs; [
