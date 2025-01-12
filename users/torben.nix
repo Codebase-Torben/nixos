@@ -316,10 +316,10 @@
         };
         # Nachtmodus  
         "org/gnome/settings-daemon/plugins/color" = {
-          night-light-enabled = true;
+          #night-light-enabled = true;
           night-light-schedule-from = 20.0;
           night-light-schedule-to = 6.0;
-          night-light-temperature = "uint32 3800";
+          night-light-temperature = 3800;
         };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -347,9 +347,10 @@
         };
         # Optische Anpassungen
         "org/gnome/desktop/interface" = {
-          # Akzentfarbe Gnome
+          # Hell oder Dunkel?
+          color-scheme = "default"; #oder "prefer-dark";          
+          # Hauptfarbe Gnome
           accent-color = "teal";
-          color-scheme = "default"; #oder "prefer-dark";
           # Wochentag anzeigen
           clock-show-weekday = true;
         };
