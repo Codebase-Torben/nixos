@@ -23,16 +23,16 @@
   # Env
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [
-      applications-menu
       burn-my-windows
       dejaview
-      places-status-indicator
       quake-terminal
       runcat
       system-monitor
       transparent-top-bar-adjustable-transparency
       wifi-qrcode
+      #applications-menu
       #battery-health-charging needs kernelModule applesmc-next on intel macbook
+      #places-status-indicator
       #wireguard-vpn-extension
       #wireless-hid
     ];
