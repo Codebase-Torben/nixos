@@ -217,7 +217,7 @@
 
   # Netzwerk
   networking = {
-    #domain = "pinasse.home";
+    domain = "pinasse.home";
     useDHCP = lib.mkDefault true;
     enableIPv6 = lib.mkForce false;
     networkmanager.enable = true;
