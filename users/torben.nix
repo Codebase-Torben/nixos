@@ -170,8 +170,8 @@
             blinking = "On";
           };
           colors.primary = {
-            background = "#2b2d2f";
-            foreground = "#ebeff3";
+            background = "#222222";
+            foreground = "#eeeeee";
           };
           colors.normal = {
             black = "#2e2e2e";
@@ -195,8 +195,8 @@
           };
           window = {
             decorations = "none";
-            startup_mode = "Fullscreen";
-            #opacity = 0.8;
+            #startup_mode = "Fullscreen";
+            opacity = 0.9;
           };
         };
       };
@@ -296,6 +296,8 @@
           show-cpu = false;
           show-memory = false;
           show-swap = false;
+          show-upload = true;
+          show-download = true;
         };
         # Quake Terminal
         "org/gnome/shell/extensions/quake-terminal" = {
@@ -305,7 +307,7 @@
           animation-time = 180;
           horizontal-size = 100;
           vertical-size = 90;
-          terminal-shortcut = "1"; #['less'] disired key
+          terminal-shortcut = ["less"]; #disired key
         };
         # DejaView
         "org/gnome/shell/extensions/dejaview" = {
@@ -319,7 +321,7 @@
           #night-light-enabled = true;
           night-light-schedule-from = 20.0;
           night-light-schedule-to = 6.0;
-          night-light-temperature = 3800;
+          night-light-temperature = "uint32 3800";
         };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -343,7 +345,7 @@
           use-system-font = false;
           visual-bell = false;
           #last-window-maximised = false;
-          #scrollback-lines = int64 1000x;
+          #scrollback-lines = "int64 1000x";
         };
         # Optische Anpassungen
         "org/gnome/desktop/interface" = {
