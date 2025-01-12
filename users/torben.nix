@@ -271,6 +271,18 @@
             #wireguard-vpn-extension.extensionUuid
             #wireless-hid.extensionUuid
           ];
+          disabled-extensions = [
+            "apps-menu@gnome-shell-extensions.gcampax.github.com"
+            "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+            "drive-menu@gnome-shell-extensions.gcampax.github.com"
+            "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
+            #"light-style@gnome-shell-extensions.gcampax.github.com"
+            "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+            "places-menu@gnome-shell-extensions.gcampax.github.com"
+            "status-icons@gnome-shell-extensions.gcampax.github.com"
+            "window-list@gnome-shell-extensions.gcampax.github.com"
+            "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
+          ];
           # Dock Favoriten
           favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "org.gnome.Console.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
         };
