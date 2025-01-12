@@ -128,7 +128,7 @@
         xh
         yamlfmt
         yarn
-        ykman
+        #ykman
         yq
         zgrviewer
         #home
@@ -162,7 +162,7 @@
             save_to_clipboard = true;
           };
           scrolling = {
-            history = 150000;
+            history = 90000;
           };
           font.size = 12;
           cursor.style = {
@@ -292,20 +292,22 @@
           render-on-current-monitor = true;
           animation-time = 180;
           horizontal-size = 100;
-          vertical-size = 80;
-          terminal-shortcut = "less"; #['less'] disired key
+          vertical-size = 90;
+          terminal-shortcut = "1"; #['less'] disired key
         };
         # DejaView
         "org/gnome/shell/extensions/dejaview" = {
+          auto-start = false;
           message-text = "Es ist Zeit für eine Miause-Pause!";
           interval-min = 61;
+          timer-enabled = false;
         };
         # Nachtmodus  
         "org/gnome/settings-daemon/plugins/color" = {
           night-light-enabled = true;
           night-light-schedule-from = 20.0;
           night-light-schedule-to = 6.0;
-          night-light-temperature = uint32 3800;
+          night-light-temperature = "uint32 3800";
         };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -321,18 +323,16 @@
           command = "nautilus";
           binding = "LaunchB";
         };
-        
         # Gnome Konsole
         "org/gnome/Console" = {
           audible-bell = false;
-          custom-font = "FiraCode Nerd Font 12";
+          custom-font = "FiraCode Nerd Font 11";
           ignore-scrollback-limit = true;
           use-system-font = false;
           visual-bell = false;
           #last-window-maximised = false;
           #scrollback-lines = int64 1000x;
         };
-
         # Optische Anpassungen
         "org/gnome/desktop/interface" = {
           # Akzentfarbe Gnome
