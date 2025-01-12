@@ -162,7 +162,7 @@
             save_to_clipboard = true;
           };
           scrolling = {
-            history = 50000;
+            history = 150000;
           };
           font.size = 12;
           cursor.style = {
@@ -272,7 +272,33 @@
             #wireless-hid.extensionUuid
           ];
           # Dock Favoriten
-          favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "Alacritty.desktop" "org.gnome.Console.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
+          favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "org.gnome.Console.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
+        };
+        # Runcat
+        "org/gnome/shell/extensions/runcat" = {
+          displaying-items = "character-and-percentage";
+          idle-threshold = 10;
+        };
+        # System-Monitor
+        "org/gnome/shell/extensions/system-monitor" = {
+          show-cpu = false;
+          show-memory = false;
+          show-swap = false;
+        };
+        # Quake Terminal
+        "org/gnome/shell/extensions/quake-terminal" = {
+          terminal-id = "Alacritty.desktop";
+          auto-hide-window = true;
+          render-on-current-monitor = true;
+          animation-time = 180;
+          horizontal-size = 100;
+          vertical-size = 80;
+          terminal-shortcut = "less"; #['less'] disired key
+        };
+        # DejaView
+        "org/gnome/shell/extensions/dejaview" = {
+          message-text = "Es ist Zeit für eine Miause-Pause!";
+          interval-min = 61;
         };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
