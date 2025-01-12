@@ -24,7 +24,6 @@
   environment = {
     systemPackages = with pkgs.gnomeExtensions; [
       applications-menu
-      #battery-health-charging needs kernelModule applesmc-next on intel macbook
       burn-my-windows
       dejaview
       places-status-indicator
@@ -32,9 +31,10 @@
       runcat
       system-monitor
       transparent-top-bar-adjustable-transparency
+      wifi-qrcode
+      #battery-health-charging needs kernelModule applesmc-next on intel macbook
       #wireguard-vpn-extension
       #wireless-hid
-      wifi-qrcode
     ];
     gnome.excludePackages = (with pkgs; [
       gnome-tour
