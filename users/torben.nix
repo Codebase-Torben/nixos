@@ -300,6 +300,13 @@
           message-text = "Es ist Zeit für eine Miause-Pause!";
           interval-min = 61;
         };
+        # Nachtmodus  
+        "org/gnome/settings-daemon/plugins/color" = {
+          night-light-enabled = true;
+          night-light-schedule-from = 20.0;
+          night-light-schedule-to = 6.0;
+          night-light-temperature = uint32 3800;
+        };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
           custom-keybindings = ["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"];
@@ -319,8 +326,24 @@
           command = "nautilus";
           binding = "LaunchB";
         };
-        # Wochentag anzeigen
+        
+        # Gnome Konsole
+        "org/gnome/Console" = {
+          audible-bell = false;
+          custom-font = "FiraCode Nerd Font 12";
+          ignore-scrollback-limit = true;
+          use-system-font = false;
+          visual-bell = false;
+          #last-window-maximised = false;
+          #scrollback-lines = int64 1000x;
+        };
+
+        # Optische Anpassungen
         "org/gnome/desktop/interface" = {
+          # Akzentfarbe Gnome
+          accent-color = "teal";
+          color-scheme = "default"; #oder "prefer-dark";
+          # Wochentag anzeigen
           clock-show-weekday = true;
         };
         # Hintergrundbild definieren (muss vorhanden sein oder git)
