@@ -4,60 +4,38 @@
   lib,
   ...
 }: {
-  #################
-  #-=# IMPORTS #=-#
-  #################
-  # imports = [
-  # ];
-
-  ##############
-  #-=# BOOT #=-#
-  ##############
+  # Boot
   boot = {
     kernelModules = ["kvm-intel" "kvm-amd"];
   };
 
-  ##################
-  #-=# PROGRAMS #=-#
-  ##################
+  # Virtual Machine Mananger
   programs = {
     virt-manager.enable = true;
   };
 
-  ##################
-  #-=# SECURITY #=-#
-  ##################
+  # Sicherheit
   security = {
     unprivilegedUsernsClone = lib.mkForce true;
   };
 
-  ####################
-  #-=# NETWORKING #=-#
-  ####################
+  # Netzwerk
   networking = {
     hosts = {
-      "192.168.122.1" = ["opnborg" "opnborg.lan"];
-      "192.168.122.2" = ["opn01" "opn01.lan"];
-      "192.168.122.3" = ["opn02" "opn02.lan"];
-      "192.168.122.4" = ["opn03" "opn03.lan"];
-      "192.168.122.5" = ["opn04" "opn04.lan"];
-      "192.168.122.9" = ["opn00" "opn00.lan"];
+      "192.168.4.100" = ["Vindows" "pinasse.home"];
+      #"192.168.xxx.xxx" = ["HOSTNAME" "pinasse.home"];
     };
     nftables.enable = lib.mkForce false;
     firewall.trustedInterfaces = ["virbr0"];
   };
 
-  #####################
-  #-=# ENVIRONMENT #=-#
-  #####################
+  # env
   environment = {
     # systemPackages = with pkgs; [quickemu distrobox distrobox-tui dive spice spice-gtk spice-protocol virt-viewer];
     systemPackages = with pkgs; [spice spice-gtk spice-protocol virt-viewer];
   };
 
-  ########################
-  #-=# VIRTUALISATION #=-#
-  ########################
+  # Virtualisierungsoptionen
   virtualisation = {
     spiceUSBRedirection.enable = true;
     libvirtd = {
