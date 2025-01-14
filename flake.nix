@@ -25,6 +25,7 @@
           ./users/torben.nix
           #./modules/office.nix
           ./modules/docker.nix
+          ./modules/virtual.nix
           ./modules/timeserver.nix
           {
             networking = {
