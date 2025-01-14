@@ -22,11 +22,11 @@
   # Netzwerk
   networking = {
     hosts = {
-      "192.168.4.100" = ["Vindows" "pinasse.home"];
+      "10.0.2.146" = ["Vindows11" "pinasse.home"];
       #"192.168.xxx.xxx" = ["HOSTNAME" "pinasse.home"];
     };
     nftables.enable = lib.mkForce false;
-    firewall.trustedInterfaces = ["virbr0"];
+    firewall.trustedInterfaces = ["virbr1"];
   };
 
   # env
@@ -40,7 +40,7 @@
     spiceUSBRedirection.enable = true;
     libvirtd = {
       enable = true;
-      allowedBridges = ["virbr0"];
+      allowedBridges = ["virbr1"];
       onBoot = "start";
       qemu = {
         package = pkgs.qemu_full;
