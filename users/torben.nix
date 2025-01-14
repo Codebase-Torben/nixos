@@ -128,7 +128,7 @@
         xh
         yamlfmt
         yarn
-        #ykman
+        yubikey-manager
         yq
         zgrviewer
         #home
@@ -284,7 +284,7 @@
             #"light-style@gnome-shell-extensions.gcampax.github.com"
           ];
           # Dock Favoriten
-          favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "org.gnome.Console.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
+          favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "org.gnome.Console.desktop" "virt-manager.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
         };
         # Runcat
         "org/gnome/shell/extensions/runcat" = {
