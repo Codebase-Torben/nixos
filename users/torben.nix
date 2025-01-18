@@ -318,10 +318,10 @@
         };
         # Nachtmodus  
         "org/gnome/settings-daemon/plugins/color" = {
-          #night-light-enabled = true;
+          night-light-enabled = true;
           night-light-schedule-from = 20.0;
           night-light-schedule-to = 6.0;
-          night-light-temperature = "uint32 3800";
+          night-light-temperature = "uint32 4250";
         };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -348,18 +348,26 @@
           #scrollback-lines = "int64 1000x";
         };
         # Optische Anpassungen
+        "org/gnome/desktop/background" = {
+          # Hintergrundbild definieren (muss vorhanden sein oder git)
+          picture-uri = "Bilder/Luna_day.png";
+          picture-uri-dark = "Bilder/Luna_night.png";
+        };
         "org/gnome/desktop/interface" = {
           # Hell oder Dunkel?
           color-scheme = "default"; #oder "prefer-dark";          
           # Hauptfarbe Gnome
           accent-color = "teal";
+          # Funktionsecken oben links
+          enable-hot-corners = false;
           # Wochentag anzeigen
           clock-show-weekday = true;
         };
-        # Hintergrundbild definieren (muss vorhanden sein oder git)
-        "org/gnome/desktop/background" = {
-          picture-uri = "Bilder/Luna_day.png";
-          picture-uri-dark = "Bilder/Luna_night.png";
+        "org/gnome/mutter" = {
+          # Dynamische Anzahl von Arbeitfl.
+          dynamic-workspaces = true;
+          # Arbeitsfl. nur auf Hauptbildschirm
+          workspaces-only-on-primary = true;
         };
       };
     };
