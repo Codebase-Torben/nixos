@@ -29,6 +29,11 @@
         sudo nom build .#nixosConfigurations.$HNAME.config.system.build.toplevel ;\
         sudo rm -f result ;\
         sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS-Luna-vom-$ZTSTMPL" '';
+      "storecheck" = ''             
+        etcnix ;\
+        sudo nix-store -v --gc ;\
+        sudo nix flake check -v ;\
+        sudo nix flake update -v '';
       "storeupdate" = ''             
         etcnix ;\
         sudo nix-store -v --gc ;\
