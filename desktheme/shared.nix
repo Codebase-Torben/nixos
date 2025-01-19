@@ -38,6 +38,7 @@
       autoRepeatDelay = 150;
       autoRepeatInterval = 15;
       xkb.layout = "de";
+      excludePackages = [ pkgs.xterm ];
     };
     pipewire = {
       enable = true;
