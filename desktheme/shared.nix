@@ -37,8 +37,9 @@
       enable = true;
       autoRepeatDelay = 150;
       autoRepeatInterval = 15;
-      xkb.layout = "de";
+      desktopManager.xterm.enable = false;
       excludePackages = [ pkgs.xterm ];
+      xkb.layout = "de";
     };
     pipewire = {
       enable = true;
