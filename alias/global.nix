@@ -8,6 +8,14 @@
       # Aliase
       etcnix = "cd / && cd /etc/nixos";
       homenix = "cd / && cd /home/torben/Dokumente/nixos";
+      savehome = ''
+        export USBSTORE="$(ls /var/run/media/torben)" ;\
+        export ZTSTMPL="$(date '+%d-%m-%Y-%H-%M')" ;\
+        tar czfv /var/run/media/torben/$USBSTORE/NixOS/home_$ZTSTMPL.tar.gz --directory=/home/torben . '';
+      savevarlib = ''
+        export USBSTORE="$(ls /var/run/media/torben)" ;\
+        export ZTSTMPL="$(date '+%d-%m-%Y-%H-%M')" ;\
+        sudo tar czfv /var/run/media/torben/$USBSTORE/NixOS/varlib_$ZTSTMPL.tar.gz --directory=/var/lib . '';
       "testbuild" = ''
         etcnix ;\
         export HNAME="$(hostname)" ;\
@@ -32,8 +40,7 @@
       "storecheck" = ''             
         etcnix ;\
         sudo nix-store -v --gc ;\
-        sudo nix flake check -v ;\
-        sudo nix flake update -v '';
+        sudo nix flake check -v '';
       "storeupdate" = ''             
         etcnix ;\
         sudo nix-store -v --gc ;\
