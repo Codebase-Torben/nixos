@@ -29,7 +29,7 @@
           image = "openspeedtest/latest:latest";
           ports = ["127.0.0.1:7891:3000"];
           #environment = {
-            #SET_SERVER_NAME = "speedtest.pinasse.home";
+          #SET_SERVER_NAME = "speedtest.pinasse.home";
           #};
         };
         yo = {

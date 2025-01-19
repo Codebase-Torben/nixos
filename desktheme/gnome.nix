@@ -36,7 +36,7 @@
       #wireguard-vpn-extension
       #wireless-hid
     ];
-    gnome.excludePackages = (with pkgs; [
+    gnome.excludePackages = with pkgs; [
       gnome-tour
       totem
       cheese
@@ -44,7 +44,7 @@
       gedit
       evince
       epiphany
-    ]);
+    ];
   };
 
   # Dienste

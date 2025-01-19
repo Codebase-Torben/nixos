@@ -127,17 +127,17 @@
     stateVersion = "24.11"; # NixOS install Version
     switch.enable = true;
     #autoUpgrade = {
-      #enable = false;
-      #allowReboot = true;
-      #dates = "daily";
-      #flags = ["--update-input" "nixpkgs" "--update-input" "nixpkgs-Release" "--update-input" "home-manager" "--commit-lock-file"];
-      #operation = "switch"; # switch or boot
-      #persistent = true;
-      #randomizedDelaySec = "15min";
-      #rebootWindow = {
-        #lower = "02:00";
-        #upper = "04:00";
-      #};
+    #enable = false;
+    #allowReboot = true;
+    #dates = "daily";
+    #flags = ["--update-input" "nixpkgs" "--update-input" "nixpkgs-Release" "--update-input" "home-manager" "--commit-lock-file"];
+    #operation = "switch"; # switch or boot
+    #persistent = true;
+    #randomizedDelaySec = "15min";
+    #rebootWindow = {
+    #lower = "02:00";
+    #upper = "04:00";
+    #};
     #};
   };
   time = {
@@ -176,9 +176,9 @@
     pulseaudio.enable = false;
     cpu = {
       #amd = {
-        #updateMicrocode = true;
-        #ryzen-smu.enable = true;
-        #sev.enable = true;
+      #updateMicrocode = true;
+      #ryzen-smu.enable = true;
+      #sev.enable = true;
       #};
       intel = {
         updateMicrocode = true;

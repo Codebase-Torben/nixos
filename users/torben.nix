@@ -205,8 +205,8 @@
         flags = ["--disable-up-arrow"];
       };
       bat = {
-      enable = true;
-      extraPackages = with pkgs.bat-extras; [batman batgrep batwatch];
+        enable = true;
+        extraPackages = with pkgs.bat-extras; [batman batgrep batwatch];
       };
       git = {
         userName = lib.mkForce "Git Signing";
@@ -316,7 +316,7 @@
           interval-min = 61;
           timer-enabled = false;
         };
-        # Nachtmodus  
+        # Nachtmodus
         "org/gnome/settings-daemon/plugins/color" = {
           night-light-enabled = true;
           night-light-schedule-from = 20.0;
@@ -355,7 +355,7 @@
         };
         "org/gnome/desktop/interface" = {
           # Hell oder Dunkel?
-          color-scheme = "default"; #oder "prefer-dark";          
+          color-scheme = "default"; #oder "prefer-dark";
           # Hauptfarbe Gnome
           accent-color = "teal";
           # Funktionsecken oben links

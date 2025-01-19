@@ -1,27 +1,28 @@
-{ config, pkgs, ... }:
-
-  let
-    lock-false = {
-      Value = false;
-      Status = "locked";
-    };
-    lock-true = {
-      Value = true;
-      Status = "locked";
-    };
-  in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  lock-false = {
+    Value = false;
+    Status = "locked";
+  };
+  lock-true = {
+    Value = true;
+    Status = "locked";
+  };
+in {
   programs = {
     firefox = {
       enable = true;
-      languagePacks = [ "de" "de-DE" ];
+      languagePacks = ["de" "de-DE"];
 
       # Richtlinien
       policies = {
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
         EnableTrackingProtection = {
-          Value= true;
+          Value = true;
           Locked = true;
           Cryptomining = true;
           Fingerprinting = true;
@@ -43,8 +44,8 @@
           "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
           # uBlock Origin:
           "uBlock0@raymondhill.net" = {
-           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-           installation_mode = "force_installed";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            installation_mode = "force_installed";
           };
           # Bitwarden:
           "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
@@ -52,10 +53,13 @@
             installation_mode = "force_installed";
           };
         };
-  
+
         # Einstellungen
-        Preferences = { 
-          "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
+        Preferences = {
+          "browser.contentblocking.category" = {
+            Value = "strict";
+            Status = "locked";
+          };
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;
           "browser.topsites.contile.enabled" = lock-false;

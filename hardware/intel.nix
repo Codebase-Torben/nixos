@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   options.hardware.intelgpu.driver = lib.mkOption {
     description = "Intel GPU driver to use";
     type = lib.types.enum [
@@ -22,7 +21,7 @@
     };
 
   config = {
-    boot.initrd.kernelModules = [ config.hardware.intelgpu.driver ];
+    boot.initrd.kernelModules = [config.hardware.intelgpu.driver];
 
     environment.variables = {
       VDPAU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");

@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: {
+{config, ...}: {
   # Shell Aliase #
   environment = {
     shellAliases = {
@@ -31,11 +28,11 @@
         sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS-Luna-vom-$ZTSTMPL" '';
 
       # Nix Store
-      "storecheck" = ''             
+      "storecheck" = ''       
         etcnix ;\
         sudo nix-store -v --gc ;\
         sudo nix flake check -v '';
-      "storeupdate" = ''             
+      "storeupdate" = ''       
         etcnix ;\
         sudo nix-store -v --gc ;\
         sudo nix-store -v --verify --check-contents --repair ;\
@@ -64,11 +61,11 @@
       "savehome" = ''
         export USBSTORE="$(ls /var/run/media/torben)" ;\
         export ZTSTMPL="$(date '+%d-%m-%Y-%H-%M')" ;\
-        tar czfv /var/run/media/torben/$USBSTORE/NixOS/home_$ZTSTMPL.tar.gz --directory=/home/torben . '';
+        tar czfv /var/run/media/torben/$USBSTORE/NixOS/home_$ZTSTMPL.tar.gz --directory=/home/torben --exclude='*.qcow2' --exclude='*.iso' . '';
       "savevarlib" = ''
         export USBSTORE="$(ls /var/run/media/torben)" ;\
         export ZTSTMPL="$(date '+%d-%m-%Y-%H-%M')" ;\
-        sudo tar czfv /var/run/media/torben/$USBSTORE/NixOS/varlib_$ZTSTMPL.tar.gz --directory=/var/lib . '';
+        sudo tar czfv /var/run/media/torben/$USBSTORE/NixOS/varlib_$ZTSTMPL.tar.gz --directory=/var/lib --exclude='*.qcow2' --exclude='*.iso' . '';
 
       # Quality of life
       b = "btop";
