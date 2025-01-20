@@ -321,7 +321,7 @@
           night-light-enabled = true;
           night-light-schedule-from = 20.0;
           night-light-schedule-to = 6.0;
-          night-light-temperature = "uint32 4250";
+          night-light-temperature = 4250;
         };
         # Keybindings (MacBook)
         "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -340,7 +340,7 @@
         # Gnome Konsole
         "org/gnome/Console" = {
           audible-bell = false;
-          custom-font = "FiraCode Nerd Font 11";
+          custom-font = "GeistMono Nerd Font 11";
           ignore-scrollback-limit = true;
           use-system-font = false;
           visual-bell = false;
