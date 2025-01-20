@@ -341,7 +341,7 @@
 
   # Schriftarten
   fonts = {
-    packages = with pkgs; [(nerdfonts.override {fonts = ["FiraCode"];})];
+    packages = with pkgs; [(nerdfonts.override {fonts = ["GeistMono"];})];
   };
 
   # Dienste
