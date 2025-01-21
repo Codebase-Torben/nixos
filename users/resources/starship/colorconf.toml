@@ -7,9 +7,9 @@ $battery\
 $sudo\
 $username\
 $hostname\
-[](bg:color_yellow fg:color_pink)\
+[](bg:color_orange fg:color_pink)\
 $directory\
-[](fg:color_yellow bg:color_aqua)\
+[](fg:color_orange bg:color_aqua)\
 $git_branch\
 $git_status\
 [](fg:color_aqua bg:color_blue)\
@@ -40,7 +40,7 @@ color_blue = '#458588'
 color_aqua = '#689d6a'
 color_green = '#98971a'
 color_orange = '#d65d0e'
-color_pink = '#f542c2'
+color_pink = '#e6609f'
 color_purple = '#b16286'
 color_red = '#cc241d'
 color_white = '#ffffff'
@@ -75,7 +75,7 @@ RedHatEnterprise = "󱄛"
 show_always = true
 style_user = "bg:color_pink fg:color_fg0"
 style_root = "bg:color_pink fg:color_fg0"
-format = '[$user]($style)'
+format = '[󰄛 $user]($style)'
 
 [hostname]
 ssh_only = false
@@ -83,11 +83,11 @@ style = "bg:color_pink fg:color_fg0"
 format = '[@](bg:color_pink fg:color_white)[$hostname ]($style)'
 
 [battery]
-empty_symbol = '🪫'
-charging_symbol = '🔌'
-discharging_symbol = '🔋'
-full_symbol = '🔋'
-format = "[$symbol$percentage ]($style)"
+empty_symbol = '󰁺'
+charging_symbol = '󰂄'
+#discharging_symbol = '󱉝'
+full_symbol = '󰁹'
+format = "[$percentage ]($style)" #$symbol
 disabled = false
 
 [[battery.display]]
@@ -96,7 +96,7 @@ style = "bg:color_pink fg:color_fg0"
 
 [sudo]
 style = "bg:color_pink fg:color_fg0"
-format = '[🤘 ]($style)'
+format = '[󰚑 ]($style)'
 disabled = false
 
 [directory]
@@ -187,8 +187,8 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '👍'
-error_symbol = '[👎](bg:color_red)'
+success_symbol = '#'
+error_symbol = '[#](bg:color_red)'
 vimcmd_symbol = '[](bold fg:color_green)'
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
