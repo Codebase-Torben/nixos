@@ -87,7 +87,7 @@ empty_symbol = '󰁺'
 charging_symbol = '󰂄'
 #discharging_symbol = '󱉝'
 full_symbol = '󰁹'
-format = "[$percentage ]($style)" #$symbol
+format = "[$symbol $percentage ]($style)"
 disabled = false
 
 [[battery.display]]
@@ -100,7 +100,7 @@ format = '[󰚑 ]($style)'
 disabled = false
 
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
+style = "fg:color_fg0 bg:color_orange"
 format = "[ $path ]($style)"
 truncate_to_repo = false
 truncation_length = 3
