@@ -185,6 +185,11 @@
         sgx.provision.enable = true;
       };
     };
+    graphics = {
+      enable = lib.mkForce true;
+      enable32Bit = lib.mkForce false;
+      #extraPackages = with pkgs; [amdvlk intel-media-driver intel-compute-runtime rocmPackages.clr.icd vpl-gpu-rt];
+    };
   };
 
   # Sicherheit
@@ -285,16 +290,6 @@
       enable = true;
       prompt.enable = true;
       config = {
-        branch.sort = "-committerdate";
-        commit.gpgsign = false;
-        init.defaultBranch = "main";
-        safe.directory = "/etc/nixos";
-        gpg.format = "ssh";
-        user = {
-          email = "torben@nixbook";
-          name = "Git Signing";
-          signingkey = "/home/torben/.ssh/schluessel4git.pub";
-        };
         http = {
           sslVerify = "true";
           sslVersion = "tlsv1.3";

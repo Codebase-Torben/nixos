@@ -16,13 +16,18 @@
       };
       git = {
         enable = true;
-        userName = lib.mkForce "Git Signing";
+        userName = lib.mkForce "cobebase-torbenix";
         userEmail = lib.mkForce "torben@nixbook";
         signing = {
           signByDefault = lib.mkForce false;
           key = lib.mkForce "~/.ssh/schluessel4git.pub";
         };
         extraConfig = {
+          branch.sort = "-committerdate";
+          commit.gpgsign = false;
+          init.defaultBranch = "main";
+          safe.directory = "~/safegit";
+          gpg.format = "ssh";
           protocol = {
             allow = "never";
             file.allow = "always";
