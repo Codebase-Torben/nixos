@@ -149,10 +149,6 @@
       fzf.enable = true;
       #thefuck.enable = true;
       starship.enable = true;
-      gh-dash.enable = true;
-      git.enable = true;
-      gitui.enable = true;
-      #lazygit.enable = true;
       home-manager.enable = true;
       librewolf.enable = true;
       alacritty = {
@@ -208,24 +204,6 @@
         enable = true;
         extraPackages = with pkgs.bat-extras; [batman batgrep batwatch];
       };
-      git = {
-        userName = lib.mkForce "Git Signing";
-        userEmail = lib.mkForce "torben@nixbook";
-        signing = {
-          signByDefault = lib.mkForce false;
-          key = lib.mkForce "~/.ssh/schluessel4git.pub";
-        };
-        extraConfig = {
-          protocol = {
-            allow = "never";
-            file.allow = "always";
-            git.allow = "never";
-            ssh.allow = "always";
-            http.allow = "never";
-            https.allow = "never";
-          };
-        };
-      };
       eza = {
         enable = true;
         git = true;
@@ -235,10 +213,6 @@
       fd = {
         enable = true;
         extraOptions = ["--absolute-path" "--no-ignore"];
-      };
-      gh = {
-        enable = true;
-        settings.git_protocol = "ssh";
       };
       zsh = {
         enable = true;
@@ -307,7 +281,7 @@
           animation-time = 180;
           horizontal-size = 100;
           vertical-size = 90;
-          terminal-shortcut = ["less"]; #disired key
+          terminal-shortcut = ["less" "dead_circumflex"]; #disired key
         };
         # DejaView
         "org/gnome/shell/extensions/dejaview" = {
@@ -340,7 +314,7 @@
         # Gnome Konsole
         "org/gnome/Console" = {
           audible-bell = false;
-          custom-font = "GeistMono Nerd Font 11";
+          custom-font = "Hack Nerd Font 11";
           ignore-scrollback-limit = true;
           use-system-font = false;
           visual-bell = false;

@@ -5,7 +5,15 @@
 }: {
   # Git Konfiguration
   programs = {
+    gh-dash.enable = true;
+    gitui.enable = true;
+    #lazygit.enable = true;
+    gh = {
+      enable = true;
+      settings.git_protocol = "ssh";
+    };
     git = {
+      enable = true;
       userName = lib.mkForce "Git Signing";
       userEmail = lib.mkForce "torben@nixbook";
       signing = {

@@ -23,6 +23,7 @@
           ./hardware/macbook.nix
           ./desktheme/gnome.nix
           ./users/torben.nix
+          ./users/resources/torben/git.nix
           #./modules/office.nix
           ./modules/docker.nix
           ./modules/virtual.nix
