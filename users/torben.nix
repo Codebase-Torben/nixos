@@ -52,9 +52,10 @@
         dmidecode
         dnstracer
         dnsutils
+        fd
         fastfetch
         ffsend
-        filezilla
+        #filezilla
         goaccess
         gobang
         gopass
@@ -65,6 +66,38 @@
         httpie
         hyperfine
         inetutils
+        jq
+        kmon
+        #keepassxc
+        #keepassxc-go
+        moreutils
+        nodejs
+        netscanner
+        ncftp
+        nix-du
+        nix-tree
+        nix-top
+        nix-init
+        nix-search-cli
+        nix-output-monitor
+        nixpkgs-review
+        nix-prefetch-scripts
+        nixfmt-rfc-style
+        nixpkgs-fmt
+        nvme-cli
+        nodejs
+        oha
+        openssl
+        paper-age
+        passage
+        pciutils
+        podman
+        podman-compose
+        podman-tui
+        portal
+        pwgen
+        progress
+        pv
         shellcheck
         shfmt
         s-tui
@@ -82,41 +115,6 @@
         tree
         trippy
         tz
-        openssl
-        progress
-        pv
-        kmon
-        keepassxc
-        keepassxc-go
-        moreutils
-        nodejs
-        netscanner
-        ncftp
-        nix-du
-        nix-tree
-        nix-top
-        nix-init
-        nix-search-cli
-        nix-output-monitor
-        nixpkgs-review
-        nix-prefetch-scripts
-        nixfmt-rfc-style
-        nixpkgs-fmt
-        nvme-cli
-        nodejs
-        fastfetch
-        fd
-        jq
-        oha
-        openssl
-        paper-age
-        passage
-        podman
-        podman-compose
-        podman-tui
-        pciutils
-        portal
-        pwgen
         rage
         rsync
         ssh-audit
