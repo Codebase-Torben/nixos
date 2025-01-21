@@ -2,7 +2,6 @@
 
 format = """
 [](color_pink)\
-#$os\
 $battery\
 $sudo\
 $username\
@@ -85,9 +84,9 @@ format = '[@](bg:color_pink fg:color_white)[$hostname ]($style)'
 [battery]
 empty_symbol = '󰁺'
 charging_symbol = '󰂄'
-discharging_symbol = '󱉝'
+discharging_symbol = '󱊢'
 full_symbol = '󰁹'
-format = "[$symbol$percentage ]($style)"
+format = "[$symbol $percentage ]($style)"
 disabled = false
 
 [[battery.display]]
