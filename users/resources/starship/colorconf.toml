@@ -7,12 +7,12 @@ $battery\
 $sudo\
 $username\
 $hostname\
-[](bg:color_orange fg:color_pink)\
+[](bg:color_blue fg:color_pink)\
 $directory\
-[](fg:color_orange bg:color_aqua)\
+[](fg:color_blue bg:color_aqua)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_blue)\
+[](fg:color_aqua bg:color_yellow)\
 $c\
 $rust\
 $golang\
@@ -22,7 +22,7 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:color_blue bg:color_bg3)\
+[](fg:color_yellow bg:color_bg3)\
 $docker_context\
 $conda\
 [](fg:color_bg3 bg:color_bg1)\
@@ -36,15 +36,15 @@ palette = 'starcolors'
 color_fg0 = '#fbf1c7'
 color_bg1 = '#3c3836'
 color_bg3 = '#665c54'
-color_blue = '#458588'
+color_blue = '#3176b6'
 color_aqua = '#689d6a'
 color_green = '#98971a'
 color_orange = '#ffb01c'
-color_pink = '#e36897'
+color_pink = '#b3216d'
 color_purple = '#b658e8'
 color_red = '#cc241d'
 color_white = '#ffffff'
-color_yellow = '#d79921'
+color_yellow = '#f6c744'
 
 [os]
 disabled = false
