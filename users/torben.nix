@@ -45,6 +45,7 @@
         curlie
         compose2nix
         cifs-utils
+        dig
         ddgr
         docker
         docker-compose
@@ -116,6 +117,7 @@
         trippy
         tz
         rage
+        rustdesk
         rsync
         ssh-audit
         undervolt
@@ -132,7 +134,6 @@
         #home
         audacity
         #bitwarden-desktop
-        dig
         kittysay
         krita
         ventoy-full
