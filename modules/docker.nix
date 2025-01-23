@@ -49,14 +49,14 @@
           image = "benbusby/whoogle-search:latest";
           ports = ["0.0.0.0:7895:8080"];
           environment = {
-            EXPOSE_PORT = "7895";
+            EXPOSE_PORT = "8080";
             WHOOGLE_MINIMAL = "1";
             WHOOGLE_RESULTS_PER_PAGE = "200";
             WHOOGLE_CONFIG_COUNTRY = "DE";
             WHOOGLE_CONFIG_LANGUAGE = "lang_de";
             WHOOGLE_CONFIG_SEARCH_LANGUAGE = "lang_de";
             WHOOGLE_CONFIG_SAFE = "1";
-            WHOOGLE_CONFIG_URL = "http://localhost:8080";
+            WHOOGLE_CONFIG_URL = "http://localhost:7895";
           };
         };
       };
