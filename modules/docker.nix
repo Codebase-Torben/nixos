@@ -15,8 +15,8 @@
   # Firewall
   networking = {
     firewall = {
-      allowedTCPPorts = [7891 7892 7893 7894 8080];
-      allowedUDPPorts = [7891 7892 7893 7894 8080];
+      allowedTCPPorts = [7891 7892 7893 7894 7895];
+      allowedUDPPorts = [7891 7892 7893 7894 7895];
     };
   };
 
@@ -47,14 +47,14 @@
         };
         whoogle = {
           image = "benbusby/whoogle-search:latest";
-          ports = ["0.0.0.0:8080:8080"];
+          ports = ["0.0.0.0:7895:8080"];
           environment = {
-            EXPOSE_PORT = "8080";
+            EXPOSE_PORT = "7895";
             WHOOGLE_MINIMAL = "1";
             WHOOGLE_RESULTS_PER_PAGE = "200";
-            #WHOOGLE_CONFIG_COUNTRY = "DE";
+            WHOOGLE_CONFIG_COUNTRY = "DE";
             WHOOGLE_CONFIG_LANGUAGE = "lang_de";
-            #WHOOGLE_CONFIG_SEARCH_LANGUAGE = "lang_de";
+            WHOOGLE_CONFIG_SEARCH_LANGUAGE = "lang_de";
             WHOOGLE_CONFIG_SAFE = "1";
             WHOOGLE_CONFIG_URL = "http://localhost:8080";
           };
