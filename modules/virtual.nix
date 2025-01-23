@@ -32,7 +32,7 @@
   # env
   environment = {
     # systemPackages = with pkgs; [quickemu distrobox distrobox-tui dive spice spice-gtk spice-protocol virt-viewer];
-    systemPackages = with pkgs; [spice spice-gtk spice-protocol virt-viewer];
+    systemPackages = with pkgs; [spice spice-gtk spice-protocol];
   };
 
   # Virtualisierungsoptionen
