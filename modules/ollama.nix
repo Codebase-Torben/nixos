@@ -20,7 +20,7 @@
   # env
   environment = {
     shellAliases = {
-      ollama-commit = "/home/me/.npm-packages/bin/ollama-commit --language de --api http://localhost:11434 --model mistral";
+      #ollama-commit = "/home/torben/.npm-packages/bin/ollama-commit --language de --api http://localhost:11434 --model mistral";
       tlm = "go run github.com/yusufcanb/tlm@latest $*";
       gollama = "go run github.com/sammcj/gollama@latest $*";
     };
