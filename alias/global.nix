@@ -69,6 +69,7 @@
 
       # Quality of life
       b = "btop";
+      cat = "bat";
       ed = "sudo nano";
       etcnix = "cd / && cd /etc/nixos";
       homenix = "cd / && cd /home/torben/Dokumente/nixos";
