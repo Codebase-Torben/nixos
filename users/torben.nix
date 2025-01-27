@@ -99,6 +99,10 @@
         pwgen
         progress
         pv
+        rage
+        rustdesk
+        rsync
+        ssh-audit
         shellcheck
         shfmt
         s-tui
@@ -116,22 +120,18 @@
         tree
         trippy
         tz
-        rage
-        rustdesk
-        rsync
-        ssh-audit
         undervolt
         usbutils
         ugm
-        webanalyze
         vulnix
+        webanalyze
         xh
         yamlfmt
         yarn
         yubikey-manager
         yq
         zgrviewer
-        #home
+        #EXTRA SPECIAL SOFTWARE JUST 4 U
         audacity
         #bitwarden-desktop
         kittysay
