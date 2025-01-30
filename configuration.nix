@@ -87,12 +87,12 @@
     # since cpupower-6.13 is broken, install without addional language
     kernelPackages = pkgs.linuxPackages_latest.extend (lpFinal: lpPrev: {
       cpupower = lpPrev.cpupower.overrideAttrs (old: {
-        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.which ];
-        makeFlags = (old.makeFlags or []) ++ [ "INSTALL_NO_TRANSLATIONS=1" ];
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.which];
+        makeFlags = (old.makeFlags or []) ++ ["INSTALL_NO_TRANSLATIONS=1"];
       });
     });
     # kernel 6.13 cpupowerlanguage broke. was fixed in #376078. Still gettin build failiure, not fixed through backport.
-  
+
     initrd = {
       systemd.enable = lib.mkForce false;
       availableKernelModules = ["ahci" "dm_mod" "sd_mod" "sr_mod" "nvme" "mmc_block" "uas" "usbhid" "usb_storage" "xhci_pci"];

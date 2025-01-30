@@ -28,11 +28,11 @@
         sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS-Luna-vom-$ZTSTMPL" '';
 
       # Nix Store
-      "storecheck" = ''         
+      "storecheck" = ''       
         etcnix ;\
         sudo nix-store -v --gc ;\
         sudo nix flake check -v '';
-      "storeupdate" = ''         
+      "storeupdate" = ''       
         etcnix ;\
         sudo nix-store -v --gc ;\
         sudo nix-store -v --verify --check-contents --repair ;\
@@ -82,13 +82,13 @@
       li = "eza --all --long --total-size --group-directories-first --header --git --git-repos --sort=inode --inode";
       meow = "kittysay";
       termshark = "sudo termshark";
-      time = "timedatectl && chronyc tracking && chronyc activity";
+      zeit = "timedatectl && chronyc tracking && chronyc activity";
 
       # Services
       logbuch = "journalctl --since='30 min ago' -u $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
-      neustarter = "sudo systemctl restart $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
-      starter = "sudo systemctl start $(systemctl list-units --type=service --all | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
-      stopper = "sudo systemctl stop $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
+      neustart = "sudo systemctl restart $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
+      start = "sudo systemctl start $(systemctl list-units --type=service --all | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
+      stop = "sudo systemctl stop $(systemctl list-units --type=service | fzf | sed 's/●/ /g' | cut --fields 3 --delimiter ' ')";
     };
   };
 }

@@ -146,7 +146,7 @@
       btop.enable = true;
       direnv.enable = true;
       fzf.enable = true;
-      #thefuck.enable = true;
+      thefuck.enable = true;
       starship.enable = true;
       home-manager.enable = true;
       librewolf.enable = true;
@@ -328,7 +328,7 @@
         };
         "org/gnome/desktop/interface" = {
           # Hell oder Dunkel?
-          color-scheme = "default"; #oder "prefer-dark";
+          color-scheme = "prefer-dark"; #oder "default"
           # Hauptfarbe Gnome
           accent-color = "teal";
           # Funktionsecken oben links
