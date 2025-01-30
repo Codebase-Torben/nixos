@@ -313,7 +313,7 @@
         # Gnome Konsole
         "org/gnome/Console" = {
           audible-bell = false;
-          custom-font = "Hack Nerd Font 11";
+          custom-font = "Hack Nerd Font 11"; # use "FiraCode Nerd Font 12" or "GeistMono Nerd Font 13" 4 other Fonts
           ignore-scrollback-limit = true;
           use-system-font = false;
           visual-bell = false;

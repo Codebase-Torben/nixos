@@ -84,22 +84,13 @@
 
   # Boot
   boot = {
-    # since cpupower-6.13 is broken, install without addional language
-    kernelPackages = pkgs.linuxPackages_latest.extend (lpFinal: lpPrev: {
-      cpupower = lpPrev.cpupower.overrideAttrs (old: {
-        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [pkgs.which];
-        makeFlags = (old.makeFlags or []) ++ ["INSTALL_NO_TRANSLATIONS=1"];
-      });
-    });
-    # kernel 6.13 cpupowerlanguage broke. was fixed in #376078. Still gettin build failiure, not fixed through backport.
-
     initrd = {
       systemd.enable = lib.mkForce false;
       availableKernelModules = ["ahci" "dm_mod" "sd_mod" "sr_mod" "nvme" "mmc_block" "uas" "usbhid" "usb_storage" "xhci_pci"];
     };
     blacklistedKernelModules = ["b43" "bcma" "brcmsmac" "ssb" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp"]; #"brcmfmac" WiFi old macbook
     extraModulePackages = [config.boot.kernelPackages.zenpower];
-    #CPUPOWRFIX delete here, only if error was merged.  kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = ["page_alloc.shuffle=1" "amd_pstate=active"];
     kernelModules = ["vfat" "exfat" "uas" "kvm-intel" "kvm-amd" "amd-pstate"];
     readOnlyNixStore = lib.mkForce true;
@@ -184,11 +175,11 @@
     enableAllFirmware = lib.mkForce true;
     pulseaudio.enable = false;
     cpu = {
-      #amd = {
-      #updateMicrocode = true;
-      #ryzen-smu.enable = true;
-      #sev.enable = true;
-      #};
+      amd = {
+        updateMicrocode = true;
+        ryzen-smu.enable = true;
+        sev.enable = true;
+      };
       intel = {
         updateMicrocode = true;
         sgx.provision.enable = true;
@@ -345,7 +336,7 @@
 
   # Schriftarten
   fonts = {
-    packages = with pkgs; [(nerdfonts.override {fonts = ["Hack" "FiraCode" "GeistMono"];})];
+    packages = with pkgs; [(nerdfonts.override {fonts = ["Hack"];})]; #"FiraCode" "GeistMono" 4 other Fonts
   };
 
   # Dienste
