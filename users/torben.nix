@@ -281,7 +281,7 @@
           animation-time = 180;
           horizontal-size = 100;
           vertical-size = 90;
-          terminal-shortcut = ["less" "dead_circumflex"]; #disired key
+          terminal-shortcut = ["less" "dead_circumflex" "delete"]; #disired key
         };
         # DejaView
         "org/gnome/shell/extensions/dejaview" = {
