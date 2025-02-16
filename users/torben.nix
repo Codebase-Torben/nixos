@@ -61,8 +61,8 @@
         goaccess
         gobang
         gopass
-        git-crypt
-        git-agecrypt
+        #git-crypt
+        #git-agecrypt
         gping
         graphviz
         httpie

@@ -27,7 +27,7 @@
           commit.gpgsign = false;
           init.defaultBranch = "main";
           safe.directory = "~/safegit";
-          gpg.format = "ssh";
+          #gpg.format = "ssh";
           protocol = {
             allow = "never";
             file.allow = "always";
