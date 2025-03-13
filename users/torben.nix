@@ -137,6 +137,7 @@
         #bitwarden-desktop
         kittysay
         krita
+        qrencode
         ventoy-full
         vlc
         vscodium
