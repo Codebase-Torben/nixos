@@ -86,7 +86,7 @@
       systemd.enable = lib.mkForce false;
       availableKernelModules = ["aesni_intel" "ahci" "applespi" "applesmc" "dm_mod" "cryptd" "intel_lpss_pci" "nvme" "thunderbolt" "sd_mod" "uas" "usbhid" "usb_storage" "xhci_pci"];
     };
-    blacklistedKernelModules = ["affs" "b43" "befs" "bfs" "brcmfmac" "brcmsmac" "bcma" "freevxfs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp" "ssb" "wl"]; # old MacBook 14,1 "brcmfmac"
+    blacklistedKernelModules = ["affs" "b43" "befs" "bfs" "brcmsmac" "bcma" "freevxfs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp" "ssb" "wl"]; # old MacBookPro14,1 "brcmfmac"
     extraModulePackages = [config.boot.kernelPackages.zenpower];
     kernelPackages = (
       if (config.system.nixos.release == "24.11") # update on 25.11 to 25.05
