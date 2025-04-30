@@ -136,7 +136,7 @@
         audacity
         #bitwarden-desktop
         kittysay
-        #krita
+        krita
         #qrencode
         #ventoy-full
         vlc
@@ -282,7 +282,7 @@
           animation-time = 180;
           horizontal-size = 100;
           vertical-size = 90;
-          terminal-shortcut = ["less" "dead_circumflex" "Delete"]; #disired key
+          terminal-shortcut = ["less" "dead_circumflex"]; #disired key
         };
         # DejaView
         "org/gnome/shell/extensions/dejaview" = {
