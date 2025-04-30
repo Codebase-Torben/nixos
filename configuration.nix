@@ -2,8 +2,6 @@
   config,
   pkgs,
   lib,
-  home-manager,
-  modulesPath,
   ...
 }: {
   # Imports
@@ -86,13 +84,17 @@
   boot = {
     initrd = {
       systemd.enable = lib.mkForce false;
-      availableKernelModules = ["ahci" "dm_mod" "sd_mod" "sr_mod" "nvme" "mmc_block" "uas" "usbhid" "usb_storage" "xhci_pci"];
+      availableKernelModules = ["aesni_intel" "ahci" "applespi" "applesmc" "dm_mod" "cryptd" "intel_lpss_pci" "nvme" "thunderbolt" "sd_mod" "uas" "usbhid" "usb_storage" "xhci_pci"];
     };
-    blacklistedKernelModules = ["b43" "bcma" "brcmsmac" "ssb" "netrom" "rose" "affs" "bfs" "befs" "freevxfs" "f2fs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp"]; #"brcmfmac" WiFi old macbook
+    blacklistedKernelModules = ["affs" "b43" "befs" "bfs" "brcmfmac" "brcmsmac" "bcma" "freevxfs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp" "ssb" "wl"];
     extraModulePackages = [config.boot.kernelPackages.zenpower];
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = ["page_alloc.shuffle=1" "amd_pstate=active"];
-    kernelModules = ["vfat" "exfat" "uas" "kvm-intel" "kvm-amd" "amd-pstate"];
+    kernelPackages = (
+      if (config.system.nixos.release == "24.11")
+      then pkgs.linuxPackages
+      else pkgs.linuxPackages_latest
+    );
+    kernelParams = ["amd_pstate=active" "copytoram" "page_alloc.shuffle=1"];
+    kernelModules = ["amd-pstate" "amdgpu" "exfat" "kvm-amd" "kvm-intel" "uas" "vfat"];
     readOnlyNixStore = lib.mkForce true;
     tmp = {
       cleanOnBoot = true;
@@ -124,7 +126,7 @@
 
   # System
   system = {
-    stateVersion = "24.11"; # NixOS install Version
+    stateVersion = "25.05"; # NixOS install Version
     switch.enable = true;
     #autoUpgrade = {
     #enable = false;
@@ -172,23 +174,31 @@
   # Hardware
   hardware = {
     acpilight.enable = true;
+    amdgpu = {
+      amdvlk.enable = true;
+      opencl.enable = false;
+    };
     enableAllFirmware = lib.mkForce true;
-    pulseaudio.enable = false;
+    enableAllHardware = lib.mkForce true;
+    enableRedistributableFirmware = lib.mkForce true;
     cpu = {
       amd = {
         updateMicrocode = true;
         ryzen-smu.enable = true;
-        sev.enable = true;
+        sev.enable = lib.mkForce false;
       };
       intel = {
         updateMicrocode = true;
-        sgx.provision.enable = true;
+        sgx.provision.enable = lib.mkForce false;
       };
     };
+    i2c.enable = true;
+    intel-gpu-tools.enable = true;
+    uinput.enable = true;
     graphics = {
       enable = lib.mkForce true;
       enable32Bit = lib.mkForce false;
-      #extraPackages = with pkgs; [amdvlk intel-media-driver intel-compute-runtime rocmPackages.clr.icd vpl-gpu-rt];
+      extraPackages = with pkgs; [intel-media-driver vpl-gpu-rt]; # intel-compute-runtime
     };
   };
 
@@ -253,7 +263,7 @@
     backupFileExtension = "backup";
   };
 
-  # General Programme
+  # Globale Software
   programs = {
     gnupg.agent.enable = true;
     nano.enable = true;
@@ -334,9 +344,9 @@
     };
   };
 
-  # Schriftarten
+  # Schriftart
   fonts = {
-    packages = with pkgs; [(nerdfonts.override {fonts = ["Hack"];})]; #"FiraCode" "GeistMono" 4 other Fonts
+    packages = [pkgs.nerd-fonts.hack]; #pkgs.nerd-fonts.FiraCode or pkgs.nerd-fonts.GeistMono for other fonts
   };
 
   # Dienste

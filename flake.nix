@@ -1,7 +1,8 @@
 {
   description = "nixos generic flake";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +26,7 @@
           ./users/torben.nix
           ./users/resources/torben/git.nix
           #./modules/office.nix
-          ./modules/docker.nix
+          #./modules/docker.nix
           ./modules/virtual.nix
           ./modules/timeserver.nix
           {

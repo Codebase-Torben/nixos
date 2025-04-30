@@ -20,7 +20,7 @@
   # home-manager
   home-manager.users.torben = {
     home = {
-      stateVersion = "24.11";
+      stateVersion = "25.05";
       enableNixpkgsReleaseCheck = false;
       username = "torben";
       homeDirectory = "/home/torben";
@@ -48,8 +48,8 @@
         cifs-utils
         dig
         ddgr
-        docker
-        docker-compose
+        #docker
+        #docker-compose
         dust
         dmidecode
         dnstracer
@@ -93,14 +93,15 @@
         paper-age
         passage
         pciutils
-        podman
-        podman-compose
-        podman-tui
-        portal
+        #podman
+        #podman-compose
+        #podman-tui
+        #portal
         pwgen
         progress
         pv
         rage
+        #rustdesk
         rsync
         ssh-audit
         shellcheck
@@ -135,12 +136,11 @@
         audacity
         #bitwarden-desktop
         kittysay
-        #krita #needs much time to compile
+        #krita
         #qrencode
-        #rustdesk #needs much time to compile
-        ventoy-full
+        #ventoy-full
         vlc
-        vscodium
+        #vscodium
       ];
     };
     fonts.fontconfig.enable = true;
