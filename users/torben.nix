@@ -101,7 +101,6 @@
         progress
         pv
         rage
-        rustdesk
         rsync
         ssh-audit
         shellcheck
@@ -136,8 +135,9 @@
         audacity
         #bitwarden-desktop
         kittysay
-        krita
-        qrencode
+        #krita #needs much time to compile
+        #qrencode
+        #rustdesk #needs much time to compile
         ventoy-full
         vlc
         vscodium
