@@ -51,7 +51,7 @@
   services = {
     gvfs.enable = lib.mkForce true;
     gnome = {
-      core-utilities.enable = lib.mkForce true;
+      core-apps.enable = lib.mkForce true;
       games.enable = lib.mkForce false;
       gnome-browser-connector.enable = lib.mkForce false;
       gnome-initial-setup.enable = lib.mkForce false;
