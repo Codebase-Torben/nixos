@@ -1,8 +1,8 @@
 {
   description = "nixos generic flake";
   inputs = {
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/release-25.05";
+    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,8 +25,8 @@
           ./desktheme/gnome.nix
           ./users/torben.nix
           ./users/resources/torben/git.nix
-          #./modules/office.nix
-          #./modules/docker.nix
+          ./modules/office.nix
+          ./modules/docker.nix
           ./modules/virtual.nix
           ./modules/timeserver.nix
           {

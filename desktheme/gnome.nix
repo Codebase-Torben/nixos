@@ -1,4 +1,4 @@
-# NixOS Luna v.1.0.8 Git Edition 19.01.2025
+# NixOS Luna v.1.0.8 Git Edition 03.06.2025
 {
   config,
   pkgs,
@@ -62,16 +62,16 @@
     };
     #udisks2.enable = lib.mkForce true;
     #devmon.enable = lib.mkForce true;
-    xserver = {
-      displayManager.gdm = {
+    displayManager = {
+      gdm = {
         enable = true;
         autoSuspend = true;
-        banner = ''Luna v.1.0.8 Git Edition (NixOS 24.11)'';
+        banner = ''Luna v.1.0.8 Git Edition (NixOS 25.05)'';
       };
-      desktopManager = {
-        gnome = {
-          enable = true;
-        };
+    };
+    desktopManager = {
+      gnome = {
+        enable = true;
       };
     };
   };

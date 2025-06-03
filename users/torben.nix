@@ -148,7 +148,6 @@
       btop.enable = true;
       direnv.enable = true;
       fzf.enable = true;
-      thefuck.enable = true;
       starship.enable = true;
       home-manager.enable = true;
       librewolf.enable = true;

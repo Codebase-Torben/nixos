@@ -61,7 +61,7 @@
 
   services = {
     pcscd.enable = true;
-    udev.extraRules = ''    
+    udev.extraRules = ''      
       ACTION=="remove",\
       ENV{ID_BUS}=="usb",\
       ENV{ID_MODEL_ID}=="0407",\

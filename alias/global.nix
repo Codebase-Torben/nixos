@@ -28,11 +28,11 @@
         sudo nixos-rebuild boot --flake "/etc/nixos/.#$HNAME" -p "NixOS-Luna-vom-$ZTSTMPL" '';
 
       # Nix Store
-      "storecheck" = ''       
+      "storecheck" = ''           
         etcnix ;\
         sudo nix-store -v --gc ;\
         sudo nix flake check -v '';
-      "storeupdate" = ''       
+      "storeupdate" = ''           
         etcnix ;\
         sudo nix-store -v --gc ;\
         sudo nix-store -v --verify --check-contents --repair ;\
