@@ -131,7 +131,7 @@
         yarn
         yubikey-manager
         yq
-        zgrviewer
+        #zgrviewer
         #EXTRA SPECIAL SOFTWARE JUST 4 U
         audacity
         #bitwarden-desktop
