@@ -95,7 +95,7 @@
     );
     kernelParams = ["amd_pstate=active" "copytoram" "page_alloc.shuffle=1"];
     kernelModules = ["amd-pstate" "amdgpu" "exfat" "kvm-amd" "kvm-intel" "uas" "vfat"];
-    readOnlyNixStore = lib.mkForce true;
+    #readOnlyNixStore = lib.mkForce true;
     tmp = {
       cleanOnBoot = true;
       useTmpfs = true;
