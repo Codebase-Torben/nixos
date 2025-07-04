@@ -235,6 +235,7 @@
           enabled-extensions = with pkgs.gnomeExtensions; [
             burn-my-windows.extensionUuid
             dejaview.extensionUuid
+            desktop-icons-ng-ding.extensionUuid
             quake-terminal.extensionUuid
             runcat.extensionUuid
             system-monitor.extensionUuid
