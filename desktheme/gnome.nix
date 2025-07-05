@@ -25,7 +25,7 @@
     systemPackages = with pkgs.gnomeExtensions; [
       burn-my-windows
       dejaview
-      desktop-icons-ng-ding
+      gtk4-desktop-icons-ng-ding
       quake-terminal
       runcat
       system-monitor
