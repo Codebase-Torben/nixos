@@ -128,6 +128,8 @@
   system = {
     stateVersion = "25.05"; # NixOS install Version
     switch.enable = true;
+    rebuild.enableNg = true;
+    includeBuildDependencies = false;
     #autoUpgrade = {
     #enable = false;
     #allowReboot = true;
