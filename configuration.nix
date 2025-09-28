@@ -372,6 +372,7 @@
   services = {
     fwupd.enable = true;
     smartd.enable = true;
+    flatpak.enable = true;
     openssh.enable = false;
     power-profiles-daemon.enable = lib.mkForce false;
     logind.hibernateKey = "ignore";
