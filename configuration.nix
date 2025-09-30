@@ -382,7 +382,7 @@
     flatpak.enable = true;
     openssh.enable = false;
     power-profiles-daemon.enable = lib.mkForce false;
-    logind.hibernateKey = "ignore";
+    settings.Login.HandleHibernateKey = "ignore";
     fstrim = {
       enable = true;
       interval = "daily";
