@@ -23,7 +23,6 @@
   networking = {
     hosts = {
       "10.0.2.146" = ["Vindows11" "pinasse.home"];
-      #"192.168.xxx.xxx" = ["HOSTNAME" "pinasse.home"];
     };
     nftables.enable = lib.mkForce false;
     firewall.trustedInterfaces = ["virbr1"];
@@ -32,7 +31,7 @@
   # env
   environment = {
     # systemPackages = with pkgs; [quickemu distrobox distrobox-tui dive spice spice-gtk spice-protocol virt-viewer];
-    systemPackages = with pkgs; [spice spice-gtk spice-protocol];
+    systemPackages = with pkgs; [spice spice-gtk spice-protocol virt-viewer];
   };
 
   # Virtualisierungsoptionen
@@ -43,18 +42,10 @@
       allowedBridges = ["virbr1"];
       onBoot = "start";
       qemu = {
-        package = pkgs.qemu_full;
         runAsRoot = true;
         swtpm.enable = true;
         ovmf = {
           enable = true;
-          packages = [
-            (pkgs.OVMF.override {
-              secureBoot = true;
-              tpmSupport = true;
-            })
-            .fd
-          ];
         };
       };
     };
