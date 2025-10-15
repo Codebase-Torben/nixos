@@ -53,7 +53,7 @@
         dust
         dmidecode
         dnstracer
-        dnsutils
+        #dnsutils
         fd
         fastfetch
         ffsend
@@ -133,10 +133,10 @@
         yq
         #zgrviewer
         #EXTRA SPECIAL SOFTWARE JUST 4 U
-        audacity
+        #audacity
         #bitwarden-desktop
         kittysay
-        krita
+        #krita
         #qrencode
         #ventoy-full
         vlc
