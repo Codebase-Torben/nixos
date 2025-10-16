@@ -48,21 +48,14 @@
         cifs-utils
         dig
         ddgr
-        #docker
-        #docker-compose
         dust
         dmidecode
-        dnstracer
-        #dnsutils
         fd
         fastfetch
         ffsend
-        #filezilla
         goaccess
         gobang
         gopass
-        #git-crypt
-        #git-agecrypt
         gping
         graphviz
         httpie
@@ -70,8 +63,6 @@
         inetutils
         jq
         kmon
-        #keepassxc
-        #keepassxc-go
         moreutils
         nodejs
         netscanner
@@ -93,15 +84,10 @@
         paper-age
         passage
         pciutils
-        #podman
-        #podman-compose
-        #podman-tui
-        #portal
         pwgen
         progress
         pv
         rage
-        #rustdesk
         rsync
         ssh-audit
         shellcheck
@@ -131,16 +117,8 @@
         yarn
         yubikey-manager
         yq
-        #zgrviewer
         #EXTRA SPECIAL SOFTWARE JUST 4 U
-        #audacity
-        #bitwarden-desktop
         kittysay
-        #krita
-        #qrencode
-        #ventoy-full
-        vlc
-        #vscodium
       ];
     };
     fonts.fontconfig.enable = true;
@@ -259,7 +237,7 @@
             #"light-style@gnome-shell-extensions.gcampax.github.com"
           ];
           # Dock Favoriten
-          favorite-apps = ["org.gnome.Nautilus.desktop" "librewolf.desktop" "org.gnome.Console.desktop" "virt-manager.desktop" "codium.desktop" "org.gnome.Calendar.desktop" "nixos-manual.desktop" "org.gnome.Weather.desktop"];
+          favorite-apps = ["org.gnome.Nautilus.desktop" "org.gnome.TextEditor.desktop" "org.gnome.Console.desktop" "org.mozilla.firefox.desktop" "org.gnome.Calendar.desktop" "org.gnome.Software.desktop" "org.gnome.Settings.desktop"];
         };
         # Runcat
         "org/gnome/shell/extensions/runcat" = {

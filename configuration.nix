@@ -200,10 +200,6 @@
   # Hardware
   hardware = {
     acpilight.enable = true;
-    amdgpu = {
-      amdvlk.enable = true;
-      opencl.enable = false;
-    };
     enableAllFirmware = lib.mkForce true;
     enableAllHardware = lib.mkForce true;
     enableRedistributableFirmware = lib.mkForce true;
@@ -211,7 +207,6 @@
       amd = {
         updateMicrocode = true;
         ryzen-smu.enable = true;
-        sev.enable = lib.mkForce false;
       };
       intel = {
         updateMicrocode = true;
