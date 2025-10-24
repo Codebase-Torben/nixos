@@ -40,6 +40,7 @@
         age
         bandwhich
         bmon
+        btop
         binsider
         certgraph
         caligula
@@ -56,7 +57,6 @@
         goaccess
         gobang
         gopass
-        gping
         graphviz
         httpie
         hyperfine
@@ -88,8 +88,6 @@
         progress
         pv
         rage
-        rsync
-        ssh-audit
         shellcheck
         shfmt
         s-tui
@@ -123,12 +121,10 @@
     };
     fonts.fontconfig.enable = true;
     programs = {
-      btop.enable = true;
       direnv.enable = true;
       fzf.enable = true;
       starship.enable = true;
       home-manager.enable = true;
-      librewolf.enable = true;
       alacritty = {
         enable = true;
         settings = {
