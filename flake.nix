@@ -23,9 +23,9 @@
           ./desktheme/gnome.nix
           ./users/torben.nix
           ./users/resources/torben/git.nix
-          ./modules/openweb-ui.nix
-          ./modules/docker.nix
-          ./modules/virtual.nix
+          #./modules/openweb-ui.nix
+          ./modules/docker.nix # little fun dockers Speedtest, Yopass, Chef
+          #./modules/virtual.nix
           ./modules/timeserver.nix
           {
             networking = {
