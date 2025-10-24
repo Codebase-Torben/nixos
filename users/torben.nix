@@ -180,7 +180,7 @@
       };
       bat = {
         enable = true;
-        extraPackages = with pkgs.bat-extras; [batman batgrep batwatch];
+        extraPackages = with pkgs.bat-extras; [batman];
       };
       eza = {
         enable = true;
