@@ -16,13 +16,13 @@
       };
       git = {
         enable = true;
-        userName = lib.mkForce "cobebase-torbenix";
-        userEmail = lib.mkForce "torben@nixbook";
         signing = {
           signByDefault = lib.mkForce false;
           key = lib.mkForce "~/.ssh/schluessel4git.pub";
         };
-        extraConfig = {
+        settings = {
+          user.name = lib.mkForce "cobebase-torbenix";
+          user.email = lib.mkForce "torben@nixbook";
           branch.sort = "-committerdate";
           commit.gpgsign = false;
           init.defaultBranch = "main";
