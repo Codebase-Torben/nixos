@@ -1,4 +1,4 @@
-# NixOS Luna v.1.0.8 Git Edition 03.06.2025
+# NixOS Luna v.1.0.9 Flatpak Edition 03.12.2025
 {
   config,
   pkgs,
@@ -67,7 +67,7 @@
       gdm = {
         enable = true;
         autoSuspend = true;
-        banner = ''Luna v.1.0.8 Git Edition (NixOS 25.05)'';
+        banner = ''Luna v.1.0.9 Flatpak Edition (NixOS 25.11)'';
       };
     };
     desktopManager = {
