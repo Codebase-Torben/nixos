@@ -89,7 +89,7 @@
     blacklistedKernelModules = ["affs" "b43" "befs" "bfs" "brcmsmac" "bcma" "freevxfs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp" "ssb" "wl"]; # old MacBookPro14,1 "brcmfmac"
     extraModulePackages = [config.boot.kernelPackages.zenpower];
     kernelPackages = (
-      if (config.system.nixos.release == "24.11") # update on 25.11 to 25.05
+      if (config.system.nixos.release == "25.05") # update on 26.05 to 25.11
       then pkgs.linuxPackages
       else pkgs.linuxPackages_latest
     );
@@ -143,7 +143,7 @@
 
   # System
   system = {
-    stateVersion = "25.05"; # NixOS install Version
+    stateVersion = "25.11"; # NixOS install Version
     switch.enable = true;
     rebuild.enableNg = true;
     includeBuildDependencies = false;
