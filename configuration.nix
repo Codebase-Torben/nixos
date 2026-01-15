@@ -145,21 +145,7 @@
   system = {
     stateVersion = "25.11"; # NixOS install Version
     switch.enable = true;
-    rebuild.enableNg = true;
     includeBuildDependencies = false;
-    #autoUpgrade = {
-    #enable = false;
-    #allowReboot = true;
-    #dates = "daily";
-    #flags = ["--update-input" "nixpkgs" "--update-input" "nixpkgs-Release" "--update-input" "home-manager" "--commit-lock-file"];
-    #operation = "switch"; # switch or boot
-    #persistent = true;
-    #randomizedDelaySec = "15min";
-    #rebootWindow = {
-    #lower = "02:00";
-    #upper = "04:00";
-    #};
-    #};
   };
   time = {
     timeZone = "Europe/Berlin";
