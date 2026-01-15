@@ -75,7 +75,7 @@
         nix-output-monitor
         nixpkgs-review
         nix-prefetch-scripts
-        nixfmt-rfc-style
+        nixfmt
         nixpkgs-fmt
         nvme-cli
         nodejs
