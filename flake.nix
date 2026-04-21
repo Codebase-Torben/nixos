@@ -24,9 +24,9 @@
           ./users/torben.nix
           ./users/resources/torben/git.nix
           #./modules/openweb-ui.nix
-          ./modules/docker.nix # little fun dockers Speedtest, Yopass, Chef
+          #./modules/docker.nix # little fun dockers Speedtest, Yopass, Chef
           #./modules/virtual.nix
-          ./modules/timeserver.nix
+          #./modules/timeserver.nix
           {
             networking = {
               hostName = "nixbook";

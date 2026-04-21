@@ -31,10 +31,9 @@
       system-monitor
       transparent-top-bar-adjustable-transparency
       wifi-qrcode
+      wireguard-vpn-extension
       #applications-menu
-      #battery-health-charging needs kernelModule applesmc-next on intel macbook
       #places-status-indicator
-      #wireguard-vpn-extension
       #wireless-hid
     ];
     gnome.excludePackages = with pkgs; [

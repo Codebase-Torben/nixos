@@ -110,6 +110,8 @@
         ugm
         vulnix
         webanalyze
+        wireguard-go
+        wireguard-tools
         xh
         yamlfmt
         yarn
@@ -214,10 +216,10 @@
             runcat.extensionUuid
             system-monitor.extensionUuid
             transparent-top-bar-adjustable-transparency.extensionUuid
+            wireguard-vpn-extension.extensionUuid
             wifi-qrcode.extensionUuid
             #applications-menu.extensionUuid
             #places-status-indicator.extensionUuid
-            #wireguard-vpn-extension.extensionUuid
             #wireless-hid.extensionUuid
           ];
           disabled-extensions = [
