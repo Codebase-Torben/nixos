@@ -306,7 +306,7 @@
         };
         "org/gnome/desktop/interface" = {
           # Hell oder Dunkel?
-          color-scheme = "prefer-dark"; #oder "default"
+          color-scheme = "default"; #oder "prefer-dark"
           # Hauptfarbe Gnome
           accent-color = "teal";
           # Funktionsecken oben links
