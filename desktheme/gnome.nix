@@ -1,4 +1,4 @@
-# NixOS Luna v.1.0.9 Flatpak Edition 03.12.2025
+# NixOS Luna v.1.0.10 WireGuard Edition 07.05.2026
 {
   config,
   pkgs,
@@ -41,6 +41,7 @@
       totem
       cheese
       gnome-photos
+      gnome-contacts
       gedit
       evince
       epiphany
@@ -66,7 +67,7 @@
       gdm = {
         enable = true;
         autoSuspend = true;
-        banner = ''Luna v.1.0.9 Flatpak Edition (NixOS 25.11)'';
+        banner = ''Luna v.1.0.10 WireGuard Edition (NixOS 26.05)'';
       };
     };
     desktopManager = {
