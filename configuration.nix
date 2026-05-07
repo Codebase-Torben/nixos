@@ -82,10 +82,6 @@
 
   # Boot
   boot = {
-    initrd = {
-      systemd.enable = lib.mkForce false;
-      availableKernelModules = ["aesni_intel" "ahci" "applespi" "applesmc" "dm_mod" "cryptd" "intel_lpss_pci" "nvme" "thunderbolt" "sd_mod" "uas" "usbhid" "usb_storage" "xhci_pci"];
-    };
     blacklistedKernelModules = ["affs" "b43" "befs" "bfs" "brcmsmac" "bcma" "freevxfs" "hpfs" "jfs" "minix" "nilfs2" "omfs" "qnx4" "qnx6" "k10temp" "ssb" "wl"]; # old MacBookPro14,1 "brcmfmac"
     extraModulePackages = [config.boot.kernelPackages.zenpower];
     kernelPackages = (
@@ -175,12 +171,6 @@
         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       '';
     };
-    targets = {
-      sleep.enable = true;
-      suspend.enable = false;
-      hibernate.enable = false;
-      hybrid-sleep.enable = false;
-    };
   };
 
   # Hardware
@@ -224,11 +214,6 @@
     apparmor = {
       enable = lib.mkForce true;
       killUnconfinedConfinables = lib.mkForce true;
-    };
-    dhparams = {
-      enable = true;
-      stateful = false;
-      defaultBitSize = "3072";
     };
     sudo-rs = {
       enable = true;

@@ -12,7 +12,7 @@
 
   # Gnome Programme
   programs = {
-    geary.enable = lib.mkForce true;
+    geary.enable = lib.mkForce false;
     seahorse.enable = lib.mkForce false;
     dconf = {
       enable = true;
